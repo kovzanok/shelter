@@ -20,9 +20,15 @@
             background-color: $color-primary;
         }
     }
+
+    
 }
 
 .nav__link{
+    transition: color 0.3s ease;
     text-decoration: none;
     color: $color-light;
+    &:hover{
+        color: $color-primary;
+    }
 }
