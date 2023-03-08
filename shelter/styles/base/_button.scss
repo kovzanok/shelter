@@ -8,16 +8,30 @@
     border: 2px solid $color-primary;
     transition: background-color 0.3s ease;
 
+    &:hover{
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+    }
+
     &_colored{
-        background-color: $color-primary;
-        &:hover{
-            background-color: $color-primary-light;
-            border: 2px solid $color-primary-light;
-        }
+        background-color: $color-primary;        
     }
 
     &_not-only{
         width: 207px;
         height: 52px;
+    }
+
+    &_card{
+        width: 187px;
+        height: 52px;
+        margin-bottom: 27px;
+        background-color: $color-background-card;
+    }
+
+    &_pets{
+        width: 261px;
+        height: 52px;
+        background-color: $color-primary;
     }
 }
