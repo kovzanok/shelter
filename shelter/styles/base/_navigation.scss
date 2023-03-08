@@ -10,6 +10,7 @@
     &_active{
         position: relative;
         color: $color-light;
+        cursor: default;
         &::after{
             position: absolute;
             content: '';

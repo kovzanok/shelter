@@ -11,6 +11,7 @@
 .nav__item_active {
   position: relative;
   color: #FFFFFF;
+  cursor: default;
 }
 .nav__item_active::after {
   position: absolute;
