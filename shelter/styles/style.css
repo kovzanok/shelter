@@ -410,6 +410,36 @@ ul {
   height: 52px;
 }
 
+.about__container {
+  padding: 79px 0 99px;
+}
+
+.about__image {
+  flex-basis: 49.5% !important;
+  padding-left: 177px;
+}
+
+.about__info {
+  padding-top: 16px;
+}
+
+.info__title {
+  font-size: 3.5rem;
+  line-height: 4.55rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #545454;
+  padding-right: 239px;
+  letter-spacing: 2px;
+}
+
+.info__text {
+  margin-top: 25px;
+  padding-right: 169px;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: #4C4C4C;
+}
+
 .not-only__container {
   padding-top: 57px;
 }
