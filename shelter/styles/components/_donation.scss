@@ -1,0 +1,72 @@
+.donation{
+    background-color: $color-background-section;
+}
+
+.donation__container{
+    padding-top: 77px;
+    padding-bottom: 84px;
+}
+
+.donation__image{
+    flex-basis: 59% !important;
+    text-align: end;
+    padding-top: 10px;
+}
+
+.donation__info{
+    font-family: $font-title;
+    color: $color-title;
+    padding-left: 29px;
+}
+
+.donation__title{
+    width: 290px;
+    @include font($size: 3.5rem,$height: 4.55rem);
+    letter-spacing: 2px;
+}
+
+.donation__text{
+    @include font($size: 1.5rem,$height: 1.65rem);
+    margin: 20px 0 20px;
+    letter-spacing: 1px;
+}
+
+.text__type{
+    letter-spacing: 0.9px;
+}
+
+.card{
+    width: 349px;
+    height: 43px;
+    background-color: $color-primary;
+    
+    padding: 0 10px 0 15px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__icon{
+    width: 30px;
+    height: 23px;
+    background-image: url('../assets/icons/credit-card.svg');
+}
+
+.card__number{
+    @include font($size: 2rem,$height: 2.3rem);
+    letter-spacing: 1.3px;
+}
+
+.number__last-digits{
+    letter-spacing: 2px;
+}
+
+.donation__subscription{
+    font-style: italic;
+    font-family: $font-text;
+    @include font($size: 1.2rem,$height: 1.8rem);
+    padding-right: 141px;
+    color: $color-subscription;
+    margin-top: 20px;
+}

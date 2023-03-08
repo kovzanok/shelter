@@ -187,6 +187,7 @@ pre {
 a {
   background-color: transparent;
   text-decoration: none;
+  color: inherit;
 }
 
 /**
@@ -506,6 +507,82 @@ ul {
   font-size: 1.5rem;
   line-height: 2.4rem;
   color: #4C4C4C;
+}
+
+.donation {
+  background-color: #F6F6F6;
+}
+
+.donation__container {
+  padding-top: 77px;
+  padding-bottom: 84px;
+}
+
+.donation__image {
+  flex-basis: 59% !important;
+  text-align: end;
+  padding-top: 10px;
+}
+
+.donation__info {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #545454;
+  padding-left: 29px;
+}
+
+.donation__title {
+  width: 290px;
+  font-size: 3.5rem;
+  line-height: 4.55rem;
+  letter-spacing: 2px;
+}
+
+.donation__text {
+  font-size: 1.5rem;
+  line-height: 1.65rem;
+  margin: 20px 0 20px;
+  letter-spacing: 1px;
+}
+
+.text__type {
+  letter-spacing: 0.9px;
+}
+
+.card {
+  width: 349px;
+  height: 43px;
+  background-color: #F1CDB3;
+  padding: 0 10px 0 15px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__icon {
+  width: 30px;
+  height: 23px;
+  background-image: url("../assets/icons/credit-card.svg");
+}
+
+.card__number {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  letter-spacing: 1.3px;
+}
+
+.number__last-digits {
+  letter-spacing: 2px;
+}
+
+.donation__subscription {
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  padding-right: 141px;
+  color: #B2B2B2;
+  margin-top: 20px;
 }
 
 .help__container {
