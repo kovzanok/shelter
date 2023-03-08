@@ -38,13 +38,16 @@
 .card{
     width: 349px;
     height: 43px;
-    background-color: $color-primary;
-    
+    background-color: $color-primary;    
     padding: 0 10px 0 15px;
     border-radius: 9px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @extend %transition;
+    &:hover{
+      background-color: $color-primary-light;    
+    }
 }
 
 .card__icon{

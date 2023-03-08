@@ -6,7 +6,7 @@
     color: $color-darkest;
     border-radius: 100px;
     border: 2px solid $color-primary;
-    transition: background-color 0.3s ease;
+    @extend %transition;
 
     &:hover{
         background-color: $color-primary-light;

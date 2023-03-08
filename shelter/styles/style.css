@@ -1,3 +1,7 @@
+.card, .button, .nav__link {
+  transition: all 0.3s ease-out;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -24,9 +28,8 @@
 }
 
 .nav__link {
-  transition: color 0.3s ease;
   text-decoration: none;
-  color: #FFFFFF;
+  color: #CDCDCD;
 }
 .nav__link:hover {
   color: #F1CDB3;
@@ -454,7 +457,6 @@ ul {
   color: #292929;
   border-radius: 100px;
   border: 2px solid #F1CDB3;
-  transition: background-color 0.3s ease;
 }
 .button:hover {
   background-color: #FDDCC4;
@@ -557,6 +559,9 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.card:hover {
+  background-color: #FDDCC4;
 }
 
 .card__icon {
