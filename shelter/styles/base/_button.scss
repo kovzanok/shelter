@@ -1,0 +1,23 @@
+.button{
+    cursor: pointer;
+    @include font($size: 1.7rem,$height: 2.2rem);
+    font-family: $font-title;
+    letter-spacing: 1px;
+    color: $color-darkest;
+    border-radius: 100px;
+    border: 2px solid $color-primary;
+    transition: background-color 0.3s ease;
+
+    &_colored{
+        background-color: $color-primary;
+        &:hover{
+            background-color: $color-primary-light;
+            border: 2px solid $color-primary-light;
+        }
+    }
+
+    &_not-only{
+        width: 207px;
+        height: 52px;
+    }
+}

@@ -386,6 +386,53 @@ ul {
   padding-left: 0;
 }
 
+.button {
+  cursor: pointer;
+  font-size: 1.7rem;
+  line-height: 2.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+  color: #292929;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  transition: background-color 0.3s ease;
+}
+.button_colored {
+  background-color: #F1CDB3;
+}
+.button_colored:hover {
+  background-color: #FDDCC4;
+  border: 2px solid #FDDCC4;
+}
+.button_not-only {
+  width: 207px;
+  height: 52px;
+}
+
+.not-only__container {
+  padding-top: 57px;
+}
+
+.not-only__info {
+  padding-top: 167px;
+}
+
+.not-only__title {
+  font-size: 4.4rem;
+  line-height: 5.7rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #FFFFFF;
+  padding-right: 94px;
+}
+
+.not-only__text {
+  margin: 42px 0px;
+  padding-right: 32px;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: #CDCDCD;
+}
+
 .header__container {
   padding-top: 60px;
   display: flex;
@@ -399,6 +446,13 @@ ul {
 
 .gradient-background {
   background: url(noise_lines_transparent@2X.png), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+}
+
+.layout-2-columns {
+  display: flex;
+}
+.layout-2-columns > * {
+  flex-basis: 50%;
 }
 
 .container {
