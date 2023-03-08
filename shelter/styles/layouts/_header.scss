@@ -1,14 +1,17 @@
-.header__container{
-    padding-top: 60px;
-    display: flex;
-    justify-content: space-between;
+.header__container {
+  padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.header{
-    background-color: brown;
+.header {
+  background: url(noise_lines_transparent@2X.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%)
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    #211f20;
 }
 
-.header__nav{
-    width: 37%;
-    padding: 6px 0 0 1px;
+.header__nav {
+  width: 37%;
+  padding: 6px 0 0 1px;
 }
