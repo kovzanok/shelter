@@ -1,0 +1,9 @@
+{
+  "name": "kovzanok-jsfe2023q1",
+  "scripts": {
+    "style": "sass --watch shelter/styles/style.scss shelter/styles/style.css"
+  },
+  "dependencies": {
+    "sass": "^1.58.3"
+  }
+}
