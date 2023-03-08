@@ -1,3 +1,29 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo__title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #F1CDB3;
+  font-size: 3.2rem;
+  line-height: 3.52rem;
+  letter-spacing: 2px;
+  margin-bottom: 13px;
+}
+
+.logo__subtitle {
+  display: inline-block;
+  color: #FFFFFF;
+  padding-left: 5px;
+  font-size: 1.3rem;
+  line-height: 1.495px;
+  letter-spacing: 1.3px;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -30,9 +56,10 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
+  font-weight: 400;
 }
 
 /* Grouping content
@@ -318,6 +345,19 @@ section, main, footer, header, article {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+.header__container {
+  padding-top: 60px;
+}
+
+.header {
+  background-color: brown;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /*# sourceMappingURL=style.css.map */
