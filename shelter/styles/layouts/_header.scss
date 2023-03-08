@@ -1,7 +1,14 @@
 .header__container{
     padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header{
     background-color: brown;
+}
+
+.header__nav{
+    width: 37%;
+    padding: 6px 0 0 1px;
 }

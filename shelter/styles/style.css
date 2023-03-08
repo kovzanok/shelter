@@ -1,5 +1,35 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__item {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: #CDCDCD;
+}
+.nav__item_active {
+  position: relative;
+  color: #FFFFFF;
+}
+.nav__item_active::after {
+  position: absolute;
+  content: "";
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #F1CDB3;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -349,10 +379,17 @@ ul {
 
 .header__container {
   padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header {
   background-color: brown;
+}
+
+.header__nav {
+  width: 37%;
+  padding: 6px 0 0 1px;
 }
 
 .container {
