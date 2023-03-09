@@ -17,3 +17,14 @@
     @include font($size: 1.3rem,$height: 1.495px);
     letter-spacing: 1.3px;
 }
+
+
+.header__our-pets{
+    .logo__title{
+        color: $color-title ;
+      }
+    
+      .logo__subtitle{
+        color: $color-darkest;
+      }
+}
