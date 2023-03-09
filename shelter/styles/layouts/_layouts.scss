@@ -18,3 +18,15 @@
         flex-basis: 24%;
     }
 }
+
+.layout-4-columns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 930px;
+    >*{
+        flex-basis: 20%;
+        
+    }
+}

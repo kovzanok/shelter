@@ -1,37 +1,56 @@
-.button{
+.button {
+  
+  @include font($size: 1.7rem, $height: 2.2rem);
+  font-family: $font-title;
+  letter-spacing: 1px;
+  color: $color-darkest;
+  border-radius: 100px;
+  border: 2px solid $color-primary;
+  @extend %transition;
+
+  &:not([disabled]) {
     cursor: pointer;
-    @include font($size: 1.7rem,$height: 2.2rem);
-    font-family: $font-title;
-    letter-spacing: 1px;
-    color: $color-darkest;
-    border-radius: 100px;
-    border: 2px solid $color-primary;
-    @extend %transition;
-
-    &:hover{
-        background-color: $color-primary-light;
-        border: 2px solid $color-primary-light;
+    &:hover {
+      background-color: $color-primary-light;
+      border: 2px solid $color-primary-light;
     }
+  }
 
-    &_colored{
-        background-color: $color-primary;        
-    }
+  &_colored {
+    background-color: $color-primary;
+  }
 
-    &_not-only{
-        width: 207px;
-        height: 52px;
-    }
+  &_not-only {
+    width: 207px;
+    height: 52px;
+  }
 
-    &_card{
-        width: 187px;
-        height: 52px;
-        margin-bottom: 27px;
-        background-color: $color-background-card;
-    }
+  &_card {
+    width: 187px;
+    height: 52px;
+    margin-bottom: 27px;
+    background-color: $color-background-card;
+  }
 
-    &_pets{
-        width: 261px;
-        height: 52px;
-        background-color: $color-primary;
-    }
+  &_pets {
+    width: 261px;
+    height: 52px;
+    background-color: $color-primary;
+  }
+}
+
+.pagination-button {
+  width: 52px;
+  height: 52px;
+  background-color: $color-background-section;
+
+  &_nonactive {
+    color: $color-dark;
+    border: 2px solid $color-dark;
+    
+  }
+
+  &_active {
+    background-color: $color-primary;
+  }
 }
