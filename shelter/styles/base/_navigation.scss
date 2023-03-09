@@ -28,7 +28,7 @@
   text-decoration: none;
   color: $color-dark;
   &:hover {
-    color: $color-primary;
+    color: $color-background-card;
   }
 }
 
@@ -48,7 +48,7 @@
     color: inherit;
     cursor: inherit;
     &:hover {
-        color: $color-primary;
+        color: $color-darkest;
         text-shadow: 0px 0px 0px $color-darkest;
     }
   }
