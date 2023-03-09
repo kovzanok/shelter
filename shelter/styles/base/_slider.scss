@@ -37,7 +37,13 @@
     align-items: center;
     background-color: $color-background-card;
     border-radius: 9px;
-
+    cursor: pointer;
+    &:hover{      
+        .button{
+          background-color: $color-primary-light;
+          border: 2px solid $color-primary-light;
+        }
+      }
     
 }
 
