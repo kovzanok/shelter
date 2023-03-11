@@ -6,14 +6,23 @@
 }
 
 .not-only__info {
-  padding-top: 167px;
+  padding-top: 13.8%;
+  @include media-pre-tablet {
+    padding-top: 0.5%;
+  }
 }
 
 .not-only__title {
   @include font($size: 4.4rem, $height: 5.7rem);
   font-family: $font-title;
   color: $color-light;
-  padding-right: 94px;
+  padding-right: 19%;
+
+  @include media-pre-tablet {
+    width: 65%;
+    margin: 0 auto;
+    padding-right: 8%;
+  }
 }
 
 .not-only__text {
@@ -21,10 +30,34 @@
   padding-right: 32px;
   @include font($size: 1.5rem, $height: 2.4rem);
   color: $color-dark;
+  @include media-pre-tablet {
+    width: 65%;
+    margin: 0 auto;
+    padding-right: 0%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+}
+
+.not-only__button {
+  @include media-pre-tablet {
+    text-align: center;
+  }
 }
 
 .not-only__image {
   img {
     width: 116%;
+
+    @include media-pre-tablet {
+      width: 80%;
+    }
+  }
+
+  @include media-pre-tablet {
+    padding-top: 14%;
+    display: flex;
+    justify-content: end;
+    align-items: initial;
   }
 }

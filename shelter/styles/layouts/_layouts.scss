@@ -22,6 +22,10 @@
     .donation__image{
         flex-basis: 59%;
     }
+
+    @include media-pre-tablet{
+        flex-direction: column;
+    }
 }
 
 .layout-3-columns{
