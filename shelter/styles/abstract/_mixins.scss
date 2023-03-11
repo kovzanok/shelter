@@ -8,6 +8,10 @@
     @media (max-width: $content-width){@content;}
 }
 
+@mixin media-slider{
+    @media (max-width: $slider-breakpoint-width){@content;}
+}
+
 @mixin media-pre-tablet{
     @media (max-width: $pre-tablet-width){@content;}
 }

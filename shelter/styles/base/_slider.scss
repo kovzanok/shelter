@@ -17,15 +17,6 @@
     display: flex;
     flex:1;
     justify-content: space-around;
-
-    .slider__item:first-child{
-        padding-left: 10px;
-    }
-
-    .slider__item:last-child{
-        padding-right: 10px;
-    }
-
 }
 
 .slider__item{
@@ -38,6 +29,7 @@
     background-color: $color-background-card;
     border-radius: 9px;
     cursor: pointer;
+
     &:hover{      
         .button{
           background-color: $color-primary-light;
@@ -45,6 +37,27 @@
         }
       }
     
+    &:first-child{
+        padding-left: 10px;
+        @include media-pre-tablet{
+            padding-left: 0;
+            padding-right: 10px;
+        }
+    } 
+
+    &:nth-child(2){
+        @include media-pre-tablet{
+            padding-left: 10px;
+        }
+    }
+
+    &:nth-child(3){
+        padding-right: 10px;
+
+        @include media-slider{
+            display: none;
+        }
+    }
 }
 
 .item__image{

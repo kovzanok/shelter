@@ -5,6 +5,10 @@
 .pets__container{
     padding-top: 78px;
 
+    @include media-pre-tablet{
+        padding-top: 15.5%;
+    }
+
 }
 
 .pets__title{    
