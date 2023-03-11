@@ -15,6 +15,12 @@
 @import './base/button';
 @import './base/card';
 
+//Layouts
+@import './layouts/footer';
+@import './layouts/header';
+@import './layouts/layouts';
+@import './layouts/container';
+
 //Components
 @import './components/about';
 @import './components/donation';
@@ -23,9 +29,5 @@
 @import './components/pets';
 @import './components/our-friends';
 
-//Layouts
-@import './layouts/footer';
-@import './layouts/header';
-@import './layouts/layouts';
-@import './layouts/container';
+
 
