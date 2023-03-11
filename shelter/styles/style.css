@@ -958,14 +958,24 @@ ul {
 }
 
 .header__container {
-  padding-top: 60px;
+  padding-top: 4.7%;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .header__container {
+    padding-top: 3.9%;
+  }
 }
 
 .header__nav {
   width: 37%;
   padding: 6px 0 0 1px;
+}
+@media (max-width: 1200px) {
+  .header__nav {
+    width: 62.7%;
+  }
 }
 
 .header__our-pets .header__container {
@@ -1017,6 +1027,12 @@ ul {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
