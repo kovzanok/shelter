@@ -20,6 +20,10 @@
     @media (max-width: $pre-tablet-width){@content;}
 }
 
+@mixin media-footer{
+    @media (max-width: $footer-breakpoint-width){@content;}
+}
+
 @mixin media-tablet{
     @media (max-width: $tablet-width){@content;}
 }

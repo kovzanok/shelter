@@ -31,12 +31,29 @@
 .layout-3-columns{
     display: flex;
     justify-content: space-between;
+
     >*{
         flex-basis: 24%;
     }
 
     .footer__location{
         flex-basis: 26%;
+    }
+
+    @include media-help-list{
+        flex-wrap: wrap;
+    }
+
+    @include media-footer{
+        justify-content: center;
+
+        .footer__location{
+            flex-basis: 50%;
+        }
+
+        .footer__contacts{
+            flex-basis: 50%;
+        }
     }
 }
 

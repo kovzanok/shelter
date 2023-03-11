@@ -1,10 +1,18 @@
 .footer{
     background: url('../assets/img/footer-gradient-background.png');
     background-size: cover;
+
+    @include media-footer{
+        background-image: url('../assets/img/footer-gradient-background-tablet.png');
+    }
 }
 
 .footer__container{
     padding-top: 41px;
+
+    @include media-footer{
+        padding-top: 14px;
+    }
 }
 
 .footer__contacts,
@@ -14,6 +22,7 @@
 
 .footer__contacts{
     width: 302px;
+    
 }
 
 .footer__location{
@@ -27,6 +36,20 @@
     font-family: $font-title;
     color: $color-light;
     letter-spacing: 2px;
+}
+
+.contacts__title{
+    @include media-footer{
+        width: 88%;
+        margin: 0 34px;
+    }
+}
+
+.location__title{
+    @include media-footer{
+        width: 88%;
+        margin: 0 18px;
+    }
 }
 
 
@@ -46,14 +69,16 @@
 }
 
 .location{
-    height: 46px;
-    
+    height: 46px;    
     margin-bottom: 26px;
+    @include media-footer{
+        padding-left: 17px;
+    }
 }
 
 .location__marker{
     display: inline-block;
-    width: 22px;
+    min-width: 22px;
     height: 32px;
     background-image: url('../assets/icons/icon-marker.svg');
     background-repeat: no-repeat;
@@ -75,6 +100,9 @@
 .contact{
     margin-bottom: 38px;
     letter-spacing: 1.2px;
+    @include media-footer{
+        padding-left: 33px;
+    }
 }
 
 .contact__link,
@@ -94,5 +122,14 @@
 
     &_tel{
         background-image: url('../assets/icons/icon-phone.svg');
+    }
+}
+
+
+.footer__image{
+    display: flex;
+
+    @include media-footer{
+        margin-top: 23px;
     }
 }
