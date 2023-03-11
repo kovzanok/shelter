@@ -583,8 +583,10 @@ ul {
 }
 
 .about__image {
-  flex-basis: 49.5% !important;
   padding-left: 177px;
+}
+.about__image img {
+  width: 72%;
 }
 
 .about__info {
@@ -596,7 +598,7 @@ ul {
   line-height: 4.55rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #545454;
-  padding-right: 239px;
+  padding-right: 38%;
   letter-spacing: 2px;
 }
 
@@ -618,9 +620,11 @@ ul {
 }
 
 .donation__image {
-  flex-basis: 59% !important;
   text-align: end;
   padding-top: 10px;
+}
+.donation__image img {
+  width: 78%;
 }
 
 .donation__info {
@@ -674,15 +678,15 @@ ul {
 }
 
 .number__last-digits {
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
 }
 
 .donation__subscription {
+  width: 363px;
   font-style: italic;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
   line-height: 1.8rem;
-  padding-right: 141px;
   color: #B2B2B2;
   margin-top: 20px;
 }
@@ -721,7 +725,7 @@ ul {
 }
 
 .service {
-  margin: 0 61px;
+  margin: 0 5.1%;
   height: 113px;
   display: flex;
   flex-direction: column;
@@ -792,6 +796,10 @@ ul {
   color: #CDCDCD;
 }
 
+.not-only__image img {
+  width: 116%;
+}
+
 .pets {
   background-color: #F6F6F6;
 }
@@ -858,7 +866,7 @@ ul {
 }
 
 .footer__container {
-  padding-top: 40px;
+  padding-top: 41px;
 }
 
 .footer__contacts,
@@ -871,7 +879,6 @@ ul {
 }
 
 .footer__location {
-  flex-basis: 26% !important;
   width: 302px;
 }
 
@@ -975,6 +982,15 @@ ul {
 .layout-2-columns > * {
   flex-basis: 50%;
 }
+.layout-2-columns .not-only__info {
+  flex-basis: 42%;
+}
+.layout-2-columns .about__image {
+  flex-basis: 49.5%;
+}
+.layout-2-columns .donation__image {
+  flex-basis: 59%;
+}
 
 .layout-3-columns {
   display: flex;
@@ -982,6 +998,9 @@ ul {
 }
 .layout-3-columns > * {
   flex-basis: 24%;
+}
+.layout-3-columns .footer__location {
+  flex-basis: 26%;
 }
 
 .layout-4-columns {

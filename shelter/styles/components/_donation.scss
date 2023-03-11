@@ -8,9 +8,13 @@
 }
 
 .donation__image{
-    flex-basis: 59% !important;
+    
     text-align: end;
     padding-top: 10px;
+
+    img{
+        width: 78%;
+    }
 }
 
 .donation__info{
@@ -62,14 +66,15 @@
 }
 
 .number__last-digits{
-    letter-spacing: 2px;
+    letter-spacing: 2.2px;
 }
 
 .donation__subscription{
+    width: 363px;
     font-style: italic;
     font-family: $font-text;
     @include font($size: 1.2rem,$height: 1.8rem);
-    padding-right: 141px;
+    
     color: $color-subscription;
     margin-top: 20px;
 }

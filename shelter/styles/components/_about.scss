@@ -2,9 +2,12 @@
     padding: 79px 0 99px;
 }
 
-.about__image{
-    flex-basis: 49.5%!important;
+.about__image{    
     padding-left: 177px;
+
+    img{
+        width: 72%;
+    }
 }
 
 
@@ -16,7 +19,7 @@
     @include font($size: 3.5rem,$height:4.55rem);
     font-family: $font-title;
     color: $color-title;
-    padding-right: 239px;
+    padding-right: 38%;
     letter-spacing: 2px;
 }
 

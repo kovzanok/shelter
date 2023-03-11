@@ -1,26 +1,30 @@
-.not-only{
-    
+.not-only {
 }
 
-.not-only__container{
-    padding-top: 57px;
+.not-only__container {
+  padding-top: 57px;
 }
 
-.not-only__info{
-    padding-top: 167px;
-    
+.not-only__info {
+  padding-top: 167px;
 }
 
-.not-only__title{
-    @include font($size: 4.4rem, $height: 5.7rem);
-    font-family: $font-title;
-    color: $color-light;
-    padding-right: 94px;
+.not-only__title {
+  @include font($size: 4.4rem, $height: 5.7rem);
+  font-family: $font-title;
+  color: $color-light;
+  padding-right: 94px;
 }
 
-.not-only__text{
-    margin: 42px 0px;
-    padding-right: 32px;
-    @include font($size: 1.5rem,$height: 2.4rem);
-    color: $color-dark;
+.not-only__text {
+  margin: 42px 0px;
+  padding-right: 32px;
+  @include font($size: 1.5rem, $height: 2.4rem);
+  color: $color-dark;
+}
+
+.not-only__image {
+  img {
+    width: 116%;
+  }
 }
