@@ -5,6 +5,18 @@
 .donation__container{
     padding-top: 77px;
     padding-bottom: 86px;
+
+    @include media-tablet{
+        padding-bottom: 95px;
+    }
+}
+
+.donation__layout{
+    flex-direction: row;
+    @include media-tablet{
+        flex-direction: column-reverse;
+    }
+    
 }
 
 .donation__image{
@@ -14,6 +26,15 @@
 
     img{
         width: 78%;
+
+        @include media-tablet{
+            width: 72%
+        }
+    }
+
+    @include media-tablet{
+        text-align: center;
+        padding-top: 47px;
     }
 }
 
@@ -21,6 +42,13 @@
     font-family: $font-title;
     color: $color-title;
     padding-left: 29px;
+
+    @include media-tablet{
+        width: 54%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
 }
 
 .donation__title{
@@ -63,6 +91,10 @@
 .card__number{
     @include font($size: 2rem,$height: 2.3rem);
     letter-spacing: 1.3px;
+
+    @include media-tablet{
+        letter-spacing: 1.2px;
+    }
 }
 
 .number__last-digits{

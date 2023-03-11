@@ -854,6 +854,20 @@ ul {
   padding-top: 77px;
   padding-bottom: 86px;
 }
+@media (max-width: 768px) {
+  .donation__container {
+    padding-bottom: 95px;
+  }
+}
+
+.donation__layout {
+  flex-direction: row;
+}
+@media (max-width: 768px) {
+  .donation__layout {
+    flex-direction: column-reverse;
+  }
+}
 
 .donation__image {
   text-align: end;
@@ -862,11 +876,29 @@ ul {
 .donation__image img {
   width: 78%;
 }
+@media (max-width: 768px) {
+  .donation__image img {
+    width: 72%;
+  }
+}
+@media (max-width: 768px) {
+  .donation__image {
+    text-align: center;
+    padding-top: 47px;
+  }
+}
 
 .donation__info {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #545454;
   padding-left: 29px;
+}
+@media (max-width: 768px) {
+  .donation__info {
+    width: 54%;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 .donation__title {
@@ -911,6 +943,11 @@ ul {
   font-size: 2rem;
   line-height: 2.3rem;
   letter-spacing: 1.3px;
+}
+@media (max-width: 768px) {
+  .card__number {
+    letter-spacing: 1.2px;
+  }
 }
 
 .number__last-digits {
