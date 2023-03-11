@@ -8,6 +8,10 @@
     @media (max-width: $content-width){@content;}
 }
 
+@mixin media-help-list{
+    @media (max-width: $help-list-breakpoint-width){@content;}
+}
+
 @mixin media-slider{
     @media (max-width: $slider-breakpoint-width){@content;}
 }
