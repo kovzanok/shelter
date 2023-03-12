@@ -1,6 +1,11 @@
 .help__container{
     padding-top: 76px;
     padding-bottom: 103px;
+
+    @include media-pre-mobile{
+        padding-top: 42px;
+        padding-bottom: 40px;
+    }
 }
 
 .help__title{
@@ -9,6 +14,12 @@
     margin: 0 auto;
     text-align: center;
     letter-spacing: 2px;
+
+    @include media-pre-mobile{
+        @include font($size: 2.5rem, $height: 3.25rem);
+        width: 233px;
+        letter-spacing: 1.5px;
+    }
 }
 
 .help__title,
@@ -30,6 +41,12 @@
     @include media-help-list{
         height: 448px;
     }
+
+    @include media-mobile-help-list{
+        height: 555px;
+        justify-content: space-between;
+        padding-top: 42px;
+    }
 }
 
 .service{
@@ -43,6 +60,14 @@
     @include media-tablet{
         margin: 0;
         flex-basis: 32.5%;
+    }
+
+    @include media-mobile-help-list{
+        flex-basis: 47%;
+    }
+
+    @include media-pre-mobile{
+        height: 87px;
     }
 }
 
@@ -88,10 +113,20 @@
     &_sleep{
         background-image: url('../assets/icons/icon-sleeping-area.svg');
     }
+
+    @include media-pre-mobile{
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+    }
 }
 
 .service__text{
     @include font($size: 2rem,$height: 2.3rem);
     margin: 0;
     letter-spacing: 1px;
+
+    @include media-pre-mobile{
+        @include font($size: 1.5rem, $height: 1.65rem)
+    }
 }

@@ -40,6 +40,10 @@
     @media (max-width: $slider-items-breakpoint){@content;}
 }
 
+@mixin media-mobile-help-list{
+    @media (max-width: $help-list-mobile-breakpoint-width){@content;}
+}
+
 @mixin media-pre-mobile{
     @media (max-width: $pre-mobile-width){@content;}
 }
