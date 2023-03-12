@@ -9,6 +9,11 @@
     @include media-tablet{
         padding-bottom: 95px;
     }
+
+    @include media-pre-mobile{
+        padding-top: 44px;
+        padding-bottom: 40px;
+    }
 }
 
 .donation__layout{
@@ -30,11 +35,19 @@
         @include media-tablet{
             width: 72%
         }
+
+        @include media-pre-mobile{
+            width: 87%;
+        }
     }
 
     @include media-tablet{
         text-align: center;
         padding-top: 47px;
+    }
+
+    @include media-pre-mobile{
+        padding-top: 31px;
     }
 }
 
@@ -49,22 +62,46 @@
         padding: 0;
     }
 
+    @include media-slider-buttons{
+        width: auto;
+    }
+
+    @include media-pre-mobile{
+
+    }
 }
 
 .donation__title{
     width: 290px;
     @include font($size: 3.5rem,$height: 4.55rem);
     letter-spacing: 2px;
+
+    @include media-pre-mobile{
+        @include font($size: 2.5rem,$height: 3.25rem);
+        text-align: center;
+        width: 224px;
+        margin: 0 auto;
+        letter-spacing: 1.4px;
+    }
 }
 
 .donation__text{
     @include font($size: 1.5rem,$height: 1.65rem);
     margin: 20px 0 20px;
     letter-spacing: 1px;
+
+    @include media-pre-mobile{
+        text-align: center;
+        letter-spacing: 0;
+        margin: 23px 0 23px;
+    }
 }
 
 .text__type{
     letter-spacing: 0.9px;
+    @include media-pre-mobile{
+        letter-spacing: 0;
+    }
 }
 
 .card{
@@ -80,6 +117,14 @@
     &:hover{
       background-color: $color-primary-light;    
     }
+
+    @include media-pre-mobile{
+        width: 281px;
+        margin: 0 auto;
+        padding-right: 14px;
+    }
+
+
 }
 
 .card__icon{
@@ -95,10 +140,18 @@
     @include media-tablet{
         letter-spacing: 1.2px;
     }
+
+    @include media-pre-mobile{
+        @include font($size: 1.5rem,$height: 1.65rem);
+        letter-spacing: 0.9px;
+    }
 }
 
 .number__last-digits{
     letter-spacing: 2.2px;
+    @include media-pre-mobile{
+        letter-spacing: 1.4px;
+    }
 }
 
 .donation__subscription{
@@ -109,4 +162,9 @@
     
     color: $color-subscription;
     margin-top: 20px;
+
+    @include media-pre-mobile{
+        width: 280px;
+        text-align: justify;
+    }
 }
