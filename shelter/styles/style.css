@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.card, .button, .nav__link {
+.card, .popup__button, .button, .nav__link {
   transition: all 0.3s ease-out;
 }
 
@@ -32,8 +32,10 @@
   text-decoration: none;
   color: #CDCDCD;
 }
-.nav__link:hover {
-  color: #FAFAFA;
+@media (hover: hover) {
+  .nav__link:hover {
+    color: #FAFAFA;
+  }
 }
 
 .header__our-pets .nav__item {
@@ -48,9 +50,11 @@
   color: inherit;
   cursor: inherit;
 }
-.header__our-pets .nav__link:hover {
-  color: #292929;
-  text-shadow: 0px 0px 0px #292929;
+@media (hover: hover) {
+  .header__our-pets .nav__link:hover {
+    color: #292929;
+    text-shadow: 0px 0px 0px #292929;
+  }
 }
 
 html {
@@ -117,9 +121,11 @@ body {
   border-radius: 9px;
   cursor: pointer;
 }
-.slider__item:hover .button {
-  background-color: #FDDCC4;
-  border: 2px solid #FDDCC4;
+@media (hover: hover) {
+  .slider__item:hover .button {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }
 }
 .slider__item:first-child {
   padding-left: 10px;
@@ -586,9 +592,11 @@ ul {
 .button:not([disabled]) {
   cursor: pointer;
 }
-.button:not([disabled]):hover {
-  background-color: #FDDCC4;
-  border: 2px solid #FDDCC4;
+@media (hover: hover) {
+  .button:not([disabled]):hover {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }
 }
 .button_colored {
   background-color: #F1CDB3;
@@ -633,9 +641,11 @@ ul {
   border-radius: 9px;
   cursor: pointer;
 }
-.card__item:hover .button {
-  background-color: #FDDCC4;
-  border: 2px solid #FDDCC4;
+@media (hover: hover) {
+  .card__item:hover .button {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }
 }
 @media (max-width: 768px) {
   .card__item:nth-child(7), .card__item:nth-child(8) {
@@ -695,6 +705,12 @@ ul {
 @media (max-width: 500px) {
   .popup__button {
     right: -31px;
+  }
+}
+@media (hover: hover) {
+  .popup__button:hover {
+    background-color: #F1CDB3;
+    cursor: pointer;
   }
 }
 

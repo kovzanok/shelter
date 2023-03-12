@@ -21,9 +21,18 @@
   background-image: url("../assets/icons/modal-close.svg");
   background-repeat: no-repeat;
   background-position: center;
+  @extend %transition;
 
   @include media-pre-mobile{
     right: -31px;
+  }
+
+  @include media-hover{
+    &:hover{
+      background-color: $color-primary;
+      cursor: pointer;
+    }
+    
   }
 }
 

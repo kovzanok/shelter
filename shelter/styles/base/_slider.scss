@@ -1,119 +1,116 @@
-.slider{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    @include media-slider-buttons{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media-slider-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
+.slider__button {
+  width: 52px;
+  height: 52px;
+  background-color: $color-background-card;
 
-.slider__button{
-    
-    width: 52px;
-    height: 52px;
-    background-color:$color-background-card;
-
-    &_left{
-        @include media-slider-buttons{
-            order: 1;
-        }
+  &_left {
+    @include media-slider-buttons {
+      order: 1;
     }
+  }
 
-    &_right{
-        @include media-slider-buttons{
-            order: 2;
-        }
+  &_right {
+    @include media-slider-buttons {
+      order: 2;
     }
+  }
 
-    @include media-slider-buttons{
-        margin: 7.3% 13.3%;
-    }
+  @include media-slider-buttons {
+    margin: 7.3% 13.3%;
+  }
 }
 
-.slider__items{
-    display: flex;
-    flex:1;
-    justify-content: space-around;
-    @include media-slider-buttons{
-        flex-basis: 100%;
-    }
+.slider__items {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  @include media-slider-buttons {
+    flex-basis: 100%;
+  }
 }
 
-.slider__item{
-    width: 270px;
-    height: 432px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $color-background-card;
-    border-radius: 9px;
-    cursor: pointer;
+.slider__item {
+  width: 270px;
+  height: 432px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-background-card;
+  border-radius: 9px;
+  cursor: pointer;
 
-    &:hover{      
-        .button{
-          background-color: $color-primary-light;
-          border: 2px solid $color-primary-light;
-        }
+  @include media-hover {
+    &:hover {
+      .button {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
       }
-    
-    &:first-child{
-        padding-left: 10px;
-        @include media-pre-tablet{
-            padding-left: 0;
-            padding-right: 10px;
-        }
+    }
+  }
 
-        @include media-pre-mobile{
-            padding-right: 0;
-        }
-    } 
-
-    &:nth-child(2){
-        @include media-pre-tablet{
-            padding-left: 10px;
-        }
-
-        @include media-slider-items{
-            display: none;
-        }
-        
+  &:first-child {
+    padding-left: 10px;
+    @include media-pre-tablet {
+      padding-left: 0;
+      padding-right: 10px;
     }
 
-    &:nth-child(3){
-        padding-right: 10px;
-
-        @include media-slider{
-            display: none;
-        }
+    @include media-pre-mobile {
+      padding-right: 0;
     }
+  }
+
+  &:nth-child(2) {
+    @include media-pre-tablet {
+      padding-left: 10px;
+    }
+
+    @include media-slider-items {
+      display: none;
+    }
+  }
+
+  &:nth-child(3) {
+    padding-right: 10px;
+
+    @include media-slider {
+      display: none;
+    }
+  }
 }
 
-.item__image{
-    width: 270px;
-    height: 270px;
+.item__image {
+  width: 270px;
+  height: 270px;
 
-    &_catrine{
-        background-image: url('../assets/img/pets-katrine.png');
-        
-    }
+  &_catrine {
+    background-image: url("../assets/img/pets-katrine.png");
+  }
 
-    &_jennifer{
-        background-image: url('../assets/img/pets-jennifer.png');
-    }
+  &_jennifer {
+    background-image: url("../assets/img/pets-jennifer.png");
+  }
 
-    &_woody{
-        background-image: url('../assets/img/pets-woody.png');
-        
-    }
+  &_woody {
+    background-image: url("../assets/img/pets-woody.png");
+  }
 }
 
-.item__name{
-    font-family: $font-title;
-    @include font($size: 2rem,$height: 2.272rem);
-    text-align: center;
-    letter-spacing: 1px;
+.item__name {
+  font-family: $font-title;
+  @include font($size: 2rem, $height: 2.272rem);
+  text-align: center;
+  letter-spacing: 1px;
 }

@@ -8,12 +8,16 @@
   background-color: $color-background-card;
   border-radius: 9px;
   cursor: pointer;
-  &:hover {
+
+  @include media-hover{
+    &:hover {
     .button {
       background-color: $color-primary-light;
       border: 2px solid $color-primary-light;
     }
   }
+  }
+  
 
   &:nth-child(7),
   &:nth-child(8) {

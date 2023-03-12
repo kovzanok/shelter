@@ -1,5 +1,4 @@
 .button {
-  
   @include font($size: 1.7rem, $height: 2.2rem);
   font-family: $font-title;
   letter-spacing: 1px;
@@ -10,9 +9,12 @@
 
   &:not([disabled]) {
     cursor: pointer;
-    &:hover {
-      background-color: $color-primary-light;
-      border: 2px solid $color-primary-light;
+
+    @include media-hover {
+      &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+      }
     }
   }
 
@@ -47,7 +49,6 @@
   &_nonactive {
     color: $color-dark;
     border: 2px solid $color-dark;
-    
   }
 
   &_active {
