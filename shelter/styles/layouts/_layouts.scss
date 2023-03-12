@@ -33,7 +33,7 @@
     justify-content: space-between;
 
     >*{
-        flex-basis: 24%;
+        flex-basis: 24%;        
     }
 
     .footer__location{
@@ -47,12 +47,14 @@
     @include media-footer{
         justify-content: center;
 
-        .footer__location{
+        .footer__location,.footer__contacts{
             flex-basis: 50%;
-        }
+        }        
+    }
 
-        .footer__contacts{
-            flex-basis: 50%;
+    @include media-mobile-help-list{
+        .footer__location,.footer__contacts{
+            flex-basis: 100%;
         }
     }
 }

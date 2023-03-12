@@ -13,11 +13,23 @@
     @include media-footer{
         padding-top: 14px;
     }
+
+    @include media-mobile{
+        padding-top: 11px;
+    }
 }
 
 .footer__contacts,
 .footer__location{
     padding-top: 17px;
+    @include media-mobile-help-list{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    
 }
 
 .footer__contacts{
@@ -25,9 +37,11 @@
     
 }
 
-.footer__location{
-    
+.footer__location{    
     width: 302px;
+    @include media-mobile{
+        padding-top: 4px;
+    }
 }
 
 .contacts__title,
@@ -36,6 +50,12 @@
     font-family: $font-title;
     color: $color-light;
     letter-spacing: 2px;
+    @include media-mobile-help-list{
+        @include font($size: 2.5rem,$height: 3.25rem)
+    }
+    @include media-mobile{
+        letter-spacing: 1.5px;
+    }
 }
 
 .contacts__title{
@@ -43,6 +63,8 @@
         width: 88%;
         margin: 0 34px;
     }
+
+    
 }
 
 .location__title{
@@ -66,6 +88,11 @@
     display: flex;
     flex-direction: column;
     margin-top: 32px;
+    @include media-mobile{
+        width: 100%;
+        margin-top: 39px;
+        margin-bottom: 0;
+    }
 }
 
 .location{
@@ -73,6 +100,10 @@
     margin-bottom: 26px;
     @include media-footer{
         padding-left: 17px;
+    }
+    @include media-mobile{
+        padding: 0;
+        margin-bottom: 33px;
     }
 }
 
@@ -89,6 +120,9 @@
     display: flex;
     flex-direction: column;
     letter-spacing: 1.2px;
+    @include media-mobile{
+        align-items: flex-start;
+    }
 }
 
 .contacts{
@@ -102,6 +136,14 @@
     letter-spacing: 1.2px;
     @include media-footer{
         padding-left: 33px;
+    }
+    @include media-mobile{
+        &:first-child{
+            padding-left: 0;
+        }
+        &:nth-child(2){
+            padding-left: 6px  ;
+        }
     }
 }
 
@@ -129,7 +171,20 @@
 .footer__image{
     display: flex;
 
+    img{
+        @include media-mobile{
+            width: 87%;
+        }
+    }
+
     @include media-footer{
         margin-top: 23px;
+    }
+
+    @include media-mobile{
+        justify-content: center;
+        margin-top: 0;
+
+        flex-basis: 100%!important;
     }
 }
