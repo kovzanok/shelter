@@ -1,79 +1,80 @@
-.card__item{
-    width: 270px;
-    height: 432px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $color-background-card;
-    border-radius: 9px;
-    cursor: pointer;
-    &:hover{      
-      .button{
-        background-color: $color-primary-light;
-        border: 2px solid $color-primary-light;
-      }
+.card__item {
+  width: 270px;
+  height: 432px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-background-card;
+  border-radius: 9px;
+  cursor: pointer;
+  &:hover {
+    .button {
+      background-color: $color-primary-light;
+      border: 2px solid $color-primary-light;
     }
+  }
 
-    &:nth-child(7),&:nth-child(8){
-        @include media-tablet{
-            display: none;
-        }
+  &:nth-child(7),
+  &:nth-child(8) {
+    @include media-tablet {
+      display: none;
     }
+  }
 
-
-    @include media-laptop{
-        margin-bottom: 33px;
-        margin-left: 19px;
-        margin-right: 19px;
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    @include media-mobile{
+        display: none;
     }
+  }
 
+  @include media-laptop {
+    margin-bottom: 33px;
+    margin-left: 19px;
+    margin-right: 19px;
+  }
 }
 
-.card__image{
-    width: 270px;
-    height: 270px;
+.card__image {
+  width: 270px;
+  height: 270px;
 
-    &_catrine{
-        background-image: url('../assets/img/pets-katrine.png');
-        
-    }
+  &_catrine {
+    background-image: url("../assets/img/pets-katrine.png");
+  }
 
-    &_jennifer{
-        background-image: url('../assets/img/pets-jennifer.png');
-    }
+  &_jennifer {
+    background-image: url("../assets/img/pets-jennifer.png");
+  }
 
-    &_woody{
-        background-image: url('../assets/img/pets-woody.png');
-        
-    }
+  &_woody {
+    background-image: url("../assets/img/pets-woody.png");
+  }
 
-    &_sophia{
-        background-image: url('../assets/img/pets-sophia.png');
-        
-    }
+  &_sophia {
+    background-image: url("../assets/img/pets-sophia.png");
+  }
 
-    &_timmy{
-        background-image: url('../assets/img/pets-timmy.png');
-    }
+  &_timmy {
+    background-image: url("../assets/img/pets-timmy.png");
+  }
 
-    &_charly{
-        background-image: url('../assets/img/pets-charly.png');
-        
-    }
-    &_scarlett{
-        background-image: url('../assets/img/pets-scarlet.png');
-        
-    }
-    &_freddie{
-        background-image: url('../assets/img/pets-freddie.png');
-        
-    }
+  &_charly {
+    background-image: url("../assets/img/pets-charly.png");
+  }
+  &_scarlett {
+    background-image: url("../assets/img/pets-scarlet.png");
+  }
+  &_freddie {
+    background-image: url("../assets/img/pets-freddie.png");
+  }
 }
 
-.card__name{
-    font-family: $font-title;
-    @include font($size: 2rem,$height: 2.272rem);
-    text-align: center;
-    letter-spacing: 1px;
+.card__name {
+  font-family: $font-title;
+  @include font($size: 2rem, $height: 2.272rem);
+  text-align: center;
+  letter-spacing: 1px;
 }
