@@ -69,7 +69,7 @@ function generatePetCard(info) {
   const cardImage = cardItem.querySelector(".card__image");
   cardImage.style.backgroundImage = `url(${info.img})`;
   const popup=new Popup(info);
-  cardImage.addEventListener('click',popup.displayPopup);
+  cardItem.addEventListener('click',popup.displayPopup);
 
 
   return cardItem;
