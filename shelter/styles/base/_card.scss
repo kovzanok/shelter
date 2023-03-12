@@ -14,7 +14,20 @@
         border: 2px solid $color-primary-light;
       }
     }
-    
+
+    &:nth-child(7),&:nth-child(8){
+        @include media-tablet{
+            display: none;
+        }
+    }
+
+
+    @include media-laptop{
+        margin-bottom: 33px;
+        margin-left: 19px;
+        margin-right: 19px;
+    }
+
 }
 
 .card__image{

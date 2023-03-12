@@ -8,6 +8,10 @@
 
 .our-friends__title{
     padding-bottom: 58px;
+
+    @include media-tablet{
+        padding-bottom: 28px;
+    }
 }
 
 .our-friends__title>*{
@@ -17,6 +21,7 @@
     letter-spacing: 2px;
     text-align: center;
     
+    
 }
 
 .our-friends__buttons{
@@ -25,5 +30,10 @@
     text-align: center;
     >*{
         margin: 0 8.5px;
+    }
+
+    @include media-tablet{
+        padding-top: 10px;
+        padding-bottom: 75px;
     }
 }
