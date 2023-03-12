@@ -28,9 +28,16 @@
     @media (max-width: $tablet-width){@content;}
 }
 
+@mixin media-slider-buttons{
+    @media (max-width: $slider-buttons-breakpoint-width){@content;}
+}
 
 @mixin media-burger{
     @media (max-width: $burger-width){@content;}
+}
+
+@mixin media-slider-items{
+    @media (max-width: $slider-items-breakpoint){@content;}
 }
 
 @mixin media-pre-mobile{
