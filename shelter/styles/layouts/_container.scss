@@ -6,4 +6,9 @@
         padding-left: 30px;
         padding-right: 30px;
     }
+
+    @include media-mobile{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

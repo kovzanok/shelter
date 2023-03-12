@@ -6,6 +6,10 @@
   @include media-tablet{
     padding-top: 3.9%;
   }
+
+  @include media-mobile{
+    padding-top: 9.3%;
+  }
 }
 
 .header__nav {
@@ -14,6 +18,10 @@
 
   @include media-laptop{
     width: 62.7%;
+  }
+
+  @include media-burger{
+    display: none;
   }
 }
 
@@ -24,4 +32,14 @@
   }
 
   
+}
+
+
+.header__burger{
+  display: flex;
+  align-items: center;
+
+  @include media-mobile{
+    width: 24.3%;
+  }
 }
