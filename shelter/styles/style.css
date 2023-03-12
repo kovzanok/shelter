@@ -911,8 +911,13 @@ ul {
 }
 
 .header__burger {
-  display: flex;
-  align-items: center;
+  display: none;
+}
+@media (max-width: 650px) {
+  .header__burger {
+    display: flex;
+    align-items: center;
+  }
 }
 @media (max-width: 320px) {
   .header__burger {
