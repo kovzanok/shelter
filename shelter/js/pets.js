@@ -1,5 +1,7 @@
 console.log(``);
 
+import Popup from "./Popup.js";
+
 const tabletWidth = 768;
 const mobileWidth = 320;
 const displayedPets = countDisplayedPets(window.innerWidth);
@@ -65,8 +67,10 @@ function generatePetCard(info) {
                         <h3 class="card__name">${info.name}</h3>
                         <button class="button button_card">Learn more</button>`;
   const cardImage = cardItem.querySelector(".card__image");
-
   cardImage.style.backgroundImage = `url(${info.img})`;
+  const popup=new Popup(info);
+  cardImage.addEventListener('click',popup.displayPopup);
+
 
   return cardItem;
 }
