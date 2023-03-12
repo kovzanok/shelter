@@ -3,31 +3,29 @@ console.log(``);
 const tabletWidth = 768;
 const mobileWidth = 320;
 const displayedPets = countDisplayedPets(window.innerWidth);
-let pets,groupedArr;
+let pets, groupedArr;
 
-async function generatePetsArray() {
-  const subArrsCount = 6;
+function generatePetsArray() {
+  const subArrsCount = 48/displayedPets;
   const petsArr = [];
+  let [randomArr,subArr]=generateRandomArray();
+ 
   for (let i = 0; i < subArrsCount; i++) {
-    const randomArr = await generateRandomArray();
+    [randomArr,subArr] = generateRandomArray(subArr);
     petsArr.push(randomArr);
-  }
-
-  return petsArr.flat(1);
+  }  
+  return petsArr;
 }
 
-async function generateRandomArray() {
-  const pets = await getPetsJson("./js/pets.json");
-
-  const subArr = [];
-  while (subArr.length !== 8) {
-    const randomNum = Math.floor(Math.random() * pets.length);
-    if (!subArr.includes(randomNum)) {
-      subArr.push(randomNum);
-    }
-  }
-
-  return subArr;
+function generateRandomArray(secondSubArr=[]) { 
+  const firstSubArr = [...secondSubArr];  
+  while (firstSubArr.length < 8) {    
+    const randomNum = Math.floor(Math.random() * 8);
+    if (!firstSubArr.includes(randomNum)) {
+      firstSubArr.push(randomNum);      
+    }    
+  }  
+  return [firstSubArr.slice(0,displayedPets),firstSubArr.slice(displayedPets)];
 }
 
 async function getPetsJson(url) {
@@ -37,36 +35,15 @@ async function getPetsJson(url) {
 }
 
 window.onload = async () => {
-  const petsArr = await generatePetsArray();
-
-  chunckArr(petsArr);
-
+  const petsArr = generatePetsArray();
+  
   pets = await getPetsJson("./js/pets.json");
-  groupedArr = _.chunk(petsArr, displayedPets);
-
+  groupedArr = petsArr;
   generatePage(groupedArr, pets);
+  const pageButtons = document.querySelector(".our-friends__buttons");
+  pageButtons.addEventListener("click", changePage);
 };
 
-function chunckArr(arr) {
-  const doubles = [];
-  const result = [];
-  let subArr = [];
-  arr.forEach((item) => {
-    if (subArr.length !== displayedPets && subArr.indexOf(item) == -1) {
-      subArr.push(item);
-    } else if (subArr.length === displayedPets) {
-      result.push(subArr);
-      subArr = [];
-      subArr.push(item);
-    } else {
-      doubles.push(item);
-    }
-  });
-
-  result.forEach((arr) => {
-    doubles.forEach((item) => {});
-  });
-}
 
 function countDisplayedPets(windowWidth) {
   let displayedPets;
@@ -105,15 +82,12 @@ function generatePage(groupedArr, pets) {
   const pageNum = getPageNum() - 1;
   const arr = groupedArr[pageNum];
   const layout = document.querySelector(".layout-4-columns");
-  layout.innerHTML='';
+  layout.innerHTML = "";
   arr.forEach((index) => {
     const card = generatePetCard(pets[index]);
     layout.append(card);
   });
 }
-
-const pageButtons = document.querySelector(".our-friends__buttons");
-pageButtons.addEventListener("click", changePage);
 
 function changePage(e) {
   if (
@@ -121,12 +95,13 @@ function changePage(e) {
     e.target.disabled === false
   ) {
     if (getPageNum() + 1 === 48 / displayedPets) {
-      blockButton(document.querySelector('.pagination-button_click-next'));
-      blockButton(document.querySelector('.pagination-button_click-all-next'));
-    }
-    else if(getPageNum()+1===2){
-      unblockButton(document.querySelector('.pagination-button_click-prev'));
-      unblockButton(document.querySelector('.pagination-button_click-all-prev'));
+      blockButton(document.querySelector(".pagination-button_click-next"));
+      blockButton(document.querySelector(".pagination-button_click-all-next"));
+    } else if (getPageNum() + 1 === 2) {
+      unblockButton(document.querySelector(".pagination-button_click-prev"));
+      unblockButton(
+        document.querySelector(".pagination-button_click-all-prev")
+      );
     }
     changePageNum(0, "plus");
   } else if (
@@ -134,33 +109,33 @@ function changePage(e) {
     e.target.disabled === false
   ) {
     if (getPageNum() - 1 === 1) {
-      blockButton(document.querySelector('.pagination-button_click-prev'));
-      blockButton(document.querySelector('.pagination-button_click-all-prev'));
-    }
-    else if(getPageNum()-1===(48 / displayedPets)-1){
-      unblockButton(document.querySelector('.pagination-button_click-next'));
-      unblockButton(document.querySelector('.pagination-button_click-all-next'));
+      blockButton(document.querySelector(".pagination-button_click-prev"));
+      blockButton(document.querySelector(".pagination-button_click-all-prev"));
+    } else if (getPageNum() - 1 === 48 / displayedPets - 1) {
+      unblockButton(document.querySelector(".pagination-button_click-next"));
+      unblockButton(
+        document.querySelector(".pagination-button_click-all-next")
+      );
     }
     changePageNum(0, "minus");
   } else if (
     e.target.classList.contains("pagination-button_click-all-next") &&
     e.target.disabled === false
   ) {
-    blockButton(document.querySelector('.pagination-button_click-next'));
-    blockButton(document.querySelector('.pagination-button_click-all-next'));
-    unblockButton(document.querySelector('.pagination-button_click-prev'));
-    unblockButton(document.querySelector('.pagination-button_click-all-prev'));
+    blockButton(document.querySelector(".pagination-button_click-next"));
+    blockButton(document.querySelector(".pagination-button_click-all-next"));
+    unblockButton(document.querySelector(".pagination-button_click-prev"));
+    unblockButton(document.querySelector(".pagination-button_click-all-prev"));
     changePageNum(48 / displayedPets);
-      } else if (
+  } else if (
     e.target.classList.contains("pagination-button_click-all-prev") &&
     e.target.disabled === false
   ) {
-    unblockButton(document.querySelector('.pagination-button_click-next'));
-    unblockButton(document.querySelector('.pagination-button_click-all-next'));
-    blockButton(document.querySelector('.pagination-button_click-prev'));
-    blockButton(document.querySelector('.pagination-button_click-all-prev'));
+    unblockButton(document.querySelector(".pagination-button_click-next"));
+    unblockButton(document.querySelector(".pagination-button_click-all-next"));
+    blockButton(document.querySelector(".pagination-button_click-prev"));
+    blockButton(document.querySelector(".pagination-button_click-all-prev"));
     changePageNum(1);
-    
   }
 }
 
@@ -173,18 +148,17 @@ function changePageNum(value = 0, operation = "") {
   } else {
     pageButton.textContent = value;
   }
-  generatePage(groupedArr,pets);
+  generatePage(groupedArr, pets);
 }
 
-function blockButton(button){
-  button.classList.remove('pagination-button_click');
-  button.classList.add('pagination-button_nonactive');
-  button.disabled=true;
+function blockButton(button) {
+  button.classList.remove("pagination-button_click");
+  button.classList.add("pagination-button_nonactive");
+  button.disabled = true;
 }
 
-
-function unblockButton(button){
-  button.classList.add('pagination-button_click');
-  button.classList.remove('pagination-button_nonactive');
-  button.disabled=false;
+function unblockButton(button) {
+  button.classList.add("pagination-button_click");
+  button.classList.remove("pagination-button_nonactive");
+  button.disabled = false;
 }
