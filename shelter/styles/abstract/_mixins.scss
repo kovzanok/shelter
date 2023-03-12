@@ -3,6 +3,14 @@
     line-height: $height;    
 }
 
+@mixin hamburger-line($color){
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    display: inline-block;
+    background-color: $color;    
+}
 
 @mixin media-laptop{
     @media (max-width: $content-width){@content;}

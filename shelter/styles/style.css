@@ -175,15 +175,6 @@ body {
   letter-spacing: 1px;
 }
 
-.hamburger__line, .hamburger::after, .hamburger::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  display: inline-block;
-  background-color: #F1CDB3;
-}
-
 .hamburger {
   display: none;
   position: relative;
@@ -197,15 +188,33 @@ body {
   }
 }
 .hamburger::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: #F1CDB3;
   top: 0;
   left: 0;
 }
 .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: #F1CDB3;
   bottom: 0;
   left: 0;
 }
 
 .hamburger__line {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: #F1CDB3;
   top: calc(50% - 1.5px);
   left: 0;
 }
@@ -907,7 +916,34 @@ ul {
 }
 
 .header__our-pets .header__container {
-  padding: 31px 0;
+  padding-top: 31px;
+  padding-bottom: 31px;
+}
+.header__our-pets .hamburger::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: black;
+}
+.header__our-pets .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+}
+.header__our-pets .hamburger__line {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: black;
 }
 
 .header__burger {
