@@ -682,8 +682,8 @@ ul {
 
 .popup__button {
   position: absolute;
-  top: -10.5%;
-  right: -4.5%;
+  top: -52px;
+  right: -45px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -695,11 +695,17 @@ ul {
 
 .popup__body {
   position: relative;
-  width: 900px;
+  width: 70%;
   height: 500px;
   border-radius: 9px;
   background-color: #FAFAFA;
   display: flex;
+}
+@media (max-width: 810px) {
+  .popup__body {
+    width: 82%;
+    height: 350px;
+  }
 }
 
 .popup__image {
@@ -710,10 +716,25 @@ ul {
   background-image: url("../assets/img/jennifer.png");
   background-repeat: no-repeat;
 }
+@media (max-width: 1200px) {
+  .popup__image {
+    background-position: center;
+  }
+}
+@media (max-width: 810px) {
+  .popup__image {
+    background-position: initial;
+  }
+}
 
 .popup__info {
   flex-basis: 49%;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+@media (max-width: 810px) {
+  .popup__info {
+    flex-basis: 52%;
+  }
 }
 
 .popup__name {
@@ -722,17 +743,16 @@ ul {
   margin: 53px 0 8px;
   letter-spacing: 2px;
 }
+@media (max-width: 810px) {
+  .popup__name {
+    margin-top: 12px;
+  }
+}
 
 .popup__breed {
   font-size: 2rem;
   line-height: 2.3rem;
   letter-spacing: 1.3px;
-}
-
-.popup__text {
-  margin: 43px 0 42px;
-  letter-spacing: 0.9px;
-  padding-right: 19px;
 }
 
 .popup__text,
@@ -746,6 +766,22 @@ ul {
   letter-spacing: 1px;
 }
 
+.popup__text {
+  margin: 43px 0 42px;
+  letter-spacing: 0.9px;
+  padding-right: 19px;
+}
+@media (max-width: 810px) {
+  .popup__text {
+    font-size: 1.3rem;
+    line-height: 1.43rem;
+    padding-right: 5px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+    letter-spacing: 0.76px;
+  }
+}
+
 .popup__item {
   margin-bottom: 11px;
 }
@@ -756,6 +792,11 @@ ul {
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 1em; /* Also needed for space (tweak if needed) */
   margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+@media (max-width: 810px) {
+  .popup__item {
+    margin-bottom: 6px;
+  }
 }
 
 .text_bold {

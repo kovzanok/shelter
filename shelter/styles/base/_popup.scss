@@ -12,24 +12,29 @@
 
 .popup__button {
   position: absolute;
-  top: -10.5%;
-  right: -4.5%;
+  top: -52px;
+  right: -45px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
   border: 2px solid $color-primary;
-  background-image: url('../assets/icons/modal-close.svg');
+  background-image: url("../assets/icons/modal-close.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .popup__body {
   position: relative;
-  width: 900px;
+  width: 70%;
   height: 500px;
   border-radius: 9px;
   background-color: $color-background-card;
   display: flex;
+
+  @include media-footer {
+    width: 82%;
+    height: 350px;
+  }
 }
 
 .popup__image {
@@ -39,28 +44,36 @@
   background-size: contain;
   background-image: url("../assets/img/jennifer.png");
   background-repeat: no-repeat;
+
+  @include media-laptop {
+    background-position: center;
+  }
+
+  @include media-footer {
+    background-position: initial;
+  }
 }
 
 .popup__info {
   flex-basis: 49%;
   font-family: $font-title;
+  @include media-footer {
+    flex-basis: 52%;
+  }
 }
 
 .popup__name {
   @include font($size: 3.5rem, $height: 4.55rem);
   margin: 53px 0 8px;
   letter-spacing: 2px;
+  @include media-footer {
+    margin-top: 12px;
+  }
 }
 
 .popup__breed {
   @include font($size: 2rem, $height: 2.3rem);
   letter-spacing: 1.3px;
-}
-
-.popup__text {
-  margin: 43px 0 42px;
-  letter-spacing: 0.9px;
-  padding-right: 19px;
 }
 
 .popup__text,
@@ -73,9 +86,22 @@
   letter-spacing: 1px;
 }
 
+.popup__text {
+  margin: 43px 0 42px;
+  letter-spacing: 0.9px;
+  padding-right: 19px;
+  @include media-footer {
+    @include font($size: 1.3rem, $height: 1.43rem);
+    padding-right: 5px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+    letter-spacing: 0.76px;
+  }
+}
 
 .popup__item {
   margin-bottom: 11px;
+
   &::before {
     content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
     color: $color-primary; /* Change the color */
@@ -83,6 +109,10 @@
     display: inline-block; /* Needed to add space between the bullet and the text */
     width: 1em; /* Also needed for space (tweak if needed) */
     margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+  @include media-footer{
+    margin-bottom: 6px;
   }
 }
 
