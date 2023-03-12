@@ -66,6 +66,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.lock {
+  overflow: hidden;
+}
+
 .slider {
   display: flex;
   justify-content: space-between;
