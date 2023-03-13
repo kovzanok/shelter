@@ -116,5 +116,63 @@
 
 
 
+.slider__wrapper{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.slider__items{
+  display: none;
+  position: relative;
+  animation: 0.5s ease-in-out;
+  &_active,&_next{
+      display: flex;
+  }
+  &_next{
+      position: absolute;
+      top: 0;
+      width: 100%;
+  }
+
+  &_to-left{
+      animation-name: left; 
+  }
+
+  &_to-right{
+      animation-name: right;
+      animation-direction: reverse; 
+  }
+
+  &_from-left{
+      animation-name: left;
+      animation-direction: reverse;  
+  }
+
+  &_from-right{
+      animation-name: right;
+  }
+}
+
+
+@keyframes left{
+  from{
+      left: 0;
+  }
+  to{
+      left: -100%;
+  }
+}
+
+
+@keyframes right{
+  from{
+      left: 100%;
+  }
+  to{
+      left: 0;
+  }
+}
 
 

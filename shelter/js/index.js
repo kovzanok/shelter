@@ -9,7 +9,7 @@ let pets;
 let previousArr = [];
 let currentItem = 0;
 let isEnable = true;
-let isBack=false;
+let isBack = false;
 let items;
 
 async function getPetsJson(url) {
@@ -31,7 +31,7 @@ function countDisplayedPets() {
   return displayedPets;
 }
 
-function generateSliderItem(info) {  
+function generateSliderItem(info) {
   const sliderItem = document.createElement("DIV");
   sliderItem.classList.add("slider__item");
   sliderItem.innerHTML = `<div class="item__image"></div>
@@ -45,8 +45,8 @@ function generateSliderItem(info) {
   return sliderItem;
 }
 
-function generateSlider(petsArr) {
-  const sliderItems = document.querySelector(".slider__items_active");
+function generateSlider(petsArr,sliderClass) {
+  const sliderItems = document.querySelector(`.${sliderClass}`);
   sliderItems.innerHTML = "";
 
   for (let i = 0; i < displayedPets; i++) {
@@ -80,7 +80,63 @@ window.onload = async () => {
   pets = await getPetsJson("./js/pets.json");
   const randomArr = generateRandomArr();
   const petsArr = generatePetsArray(randomArr, pets);
-  generateSlider(petsArr);
-  
+  generateSlider(petsArr,'slider__items_active');
+  slider()
 };
 
+function slider() {
+  items = document.querySelectorAll(".slider__items");
+  const leftButton = document.querySelector(".slider__button_left");
+  const rightButton = document.querySelector(".slider__button_right");
+
+  leftButton.addEventListener("click", function () {
+    if (isEnable) {
+      previousItem(currentItem);
+    }
+  });
+
+  rightButton.addEventListener("click", function () {
+    if (isEnable) {
+      nextItem(currentItem);
+    }
+  });
+}
+
+const changeCurrentItem = function (n) {
+  currentItem = (n + items.length) % items.length;
+};
+
+const hideItem = function (direction) {
+  isEnable = false;  
+  items[currentItem].classList.add("slider__items" + direction);
+  items[currentItem].addEventListener("animationend", function () {
+    this.classList.remove("slider__items_active", "slider__items" + direction);
+  });
+};
+
+const showItem = function (direction) {
+  items[currentItem].classList.add(
+    "slider__items_next",
+    "slider__items" + direction
+  );
+  const randomArr = generateRandomArr();
+  const petsArr = generatePetsArray(randomArr, pets);
+  generateSlider(petsArr,"slider__items_next");
+  items[currentItem].addEventListener("animationend", function () {
+    this.classList.remove("slider__items_next", "slider__items" + direction);
+    this.classList.add("slider__items_active");
+    isEnable = true;
+  });
+};
+
+const previousItem = function (n) {
+  hideItem("_to-right");
+  changeCurrentItem(n - 1);
+  showItem("_from-left");
+};
+
+const nextItem = function (n) {
+  hideItem("_to-left");
+  changeCurrentItem(n + 1);
+  showItem("_from-right");
+};

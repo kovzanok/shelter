@@ -186,6 +186,56 @@ body {
   letter-spacing: 1px;
 }
 
+.slider__wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider__items {
+  display: none;
+  position: relative;
+  animation: 0.5s ease-in-out;
+}
+.slider__items_active, .slider__items_next {
+  display: flex;
+}
+.slider__items_next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.slider__items_to-left {
+  animation-name: left;
+}
+.slider__items_to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+.slider__items_from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+.slider__items_from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
 .hamburger {
   display: none;
   position: relative;
