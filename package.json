@@ -4,6 +4,7 @@
     "style": "sass --watch shelter/styles/style.scss shelter/styles/style.css"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "sass": "^1.58.3"
   }
 }

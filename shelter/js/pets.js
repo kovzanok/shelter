@@ -7,27 +7,43 @@ const mobileWidth = 320;
 const displayedPets = countDisplayedPets(window.innerWidth);
 let pets, groupedArr;
 
-function generatePetsArray() {
-  const subArrsCount = 48/displayedPets;
-  const petsArr = [];
-  let [randomArr,subArr]=generateRandomArray();
- 
-  for (let i = 0; i < subArrsCount; i++) {
-    [randomArr,subArr] = generateRandomArray(subArr);
-    petsArr.push(randomArr);
-  }  
-  return petsArr;
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
 }
 
-function generateRandomArray(secondSubArr=[]) { 
-  const firstSubArr = [...secondSubArr];  
-  while (firstSubArr.length < 8) {    
-    const randomNum = Math.floor(Math.random() * 8);
-    if (!firstSubArr.includes(randomNum)) {
-      firstSubArr.push(randomNum);      
-    }    
-  }  
-  return [firstSubArr.slice(0,displayedPets),firstSubArr.slice(displayedPets)];
+function generatePaginationArr() {
+  const pages = 48 / displayedPets;
+
+  const a = [
+    [0, 1, 2, 3, 4, 5, 6, 7],
+    [1, 2, 3, 4, 5, 6, 7, 0],
+    [2, 3, 4, 5, 6, 7, 0, 1],
+    [3, 4, 5, 6, 7, 0, 1, 2],
+    [4, 5, 6, 7, 0, 1, 2, 3],
+    [5, 6, 7, 0, 1, 2, 3, 4],
+  ];
+
+  if (pages === 6) {
+    a.forEach((b) => {
+      shuffle(b);
+    });
+    return a;
+  } else if (pages === 8) {
+    let c = _.zip(...a);
+    c.forEach((b) => {
+      shuffle(b);
+    });
+    return c;
+  } else {
+    let c = _.zip(...a);
+
+    let d = c.map((b) => {
+      return _.chunk(b, 3);
+    });
+    shuffle(d)
+
+    return d.flat(1);
+  }
 }
 
 async function getPetsJson(url) {
@@ -37,15 +53,14 @@ async function getPetsJson(url) {
 }
 
 window.onload = async () => {
-  const petsArr = generatePetsArray();
-  
+  const petsArr = generatePaginationArr();
+  console.log(petsArr);
   pets = await getPetsJson("./js/pets.json");
   groupedArr = petsArr;
   generatePage(groupedArr, pets);
   const pageButtons = document.querySelector(".our-friends__buttons");
   pageButtons.addEventListener("click", changePage);
 };
-
 
 function countDisplayedPets(windowWidth) {
   let displayedPets;
@@ -68,9 +83,8 @@ function generatePetCard(info) {
                         <button class="button button_card">Learn more</button>`;
   const cardImage = cardItem.querySelector(".card__image");
   cardImage.style.backgroundImage = `url(${info.img})`;
-  const popup=new Popup(info);
-  cardItem.addEventListener('click',popup.displayPopup);
-
+  const popup = new Popup(info);
+  cardItem.addEventListener("click", popup.displayPopup);
 
   return cardItem;
 }
