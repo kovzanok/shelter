@@ -9,8 +9,12 @@ let pets;
 let previousArr = [];
 let currentItem = 0;
 let isEnable = true;
-let isBack = false;
 let items;
+
+let displayed = [];
+let prevDisplayed = [];
+let prevPos = 0;
+let isBack;
 
 async function getPetsJson(url) {
   const response = await fetch(url);
@@ -45,7 +49,7 @@ function generateSliderItem(info) {
   return sliderItem;
 }
 
-function generateSlider(petsArr,sliderClass) {
+function generateSlider(petsArr, sliderClass) {
   const sliderItems = document.querySelector(`.${sliderClass}`);
   sliderItems.innerHTML = "";
 
@@ -79,9 +83,10 @@ function generatePetsArray(arr, pets) {
 window.onload = async () => {
   pets = await getPetsJson("./js/pets.json");
   const randomArr = generateRandomArr();
+  displayed = randomArr;
   const petsArr = generatePetsArray(randomArr, pets);
-  generateSlider(petsArr,'slider__items_active');
-  slider()
+  generateSlider(petsArr, "slider__items_active");
+  slider();
 };
 
 function slider() {
@@ -103,11 +108,19 @@ function slider() {
 }
 
 const changeCurrentItem = function (n) {
+  if (prevPos === (n + items.length) % items.length) {
+    isBack = true;
+    
+  }
+  else{
+    isBack=false;
+  }
+  prevPos=currentItem;
   currentItem = (n + items.length) % items.length;
 };
 
 const hideItem = function (direction) {
-  isEnable = false;  
+  isEnable = false;
   items[currentItem].classList.add("slider__items" + direction);
   items[currentItem].addEventListener("animationend", function () {
     this.classList.remove("slider__items_active", "slider__items" + direction);
@@ -119,9 +132,21 @@ const showItem = function (direction) {
     "slider__items_next",
     "slider__items" + direction
   );
-  const randomArr = generateRandomArr();
-  const petsArr = generatePetsArray(randomArr, pets);
-  generateSlider(petsArr,"slider__items_next");
+
+  let petsArr;
+
+  if (isBack) {
+    petsArr = generatePetsArray(prevDisplayed, pets);
+    [prevDisplayed, displayed] = [displayed, prevDisplayed];
+    
+  } else {
+    const randomArr = generateRandomArr();
+    prevDisplayed=displayed;    
+    displayed = randomArr;
+    petsArr = generatePetsArray(randomArr, pets);
+  }
+
+  generateSlider(petsArr, "slider__items_next");
   items[currentItem].addEventListener("animationend", function () {
     this.classList.remove("slider__items_next", "slider__items" + direction);
     this.classList.add("slider__items_active");
