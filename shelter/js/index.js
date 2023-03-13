@@ -138,6 +138,7 @@ const showItem = function (direction) {
   if (isBack) {
     petsArr = generatePetsArray(prevDisplayed, pets);
     [prevDisplayed, displayed] = [displayed, prevDisplayed];
+    previousArr=displayed;
     
   } else {
     const randomArr = generateRandomArr();
