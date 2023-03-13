@@ -4,7 +4,7 @@ import Popup from "./Popup.js";
 
 const tabletWidth = 768;
 const mobileWidth = 320;
-const displayedPets = countDisplayedPets(window.innerWidth);
+const displayedPets = countDisplayedPets();
 
 
 async function getPetsJson(url) {
@@ -79,6 +79,5 @@ window.onload= async ()=>{
     const pets= await getPetsJson("./js/pets.json");
     const randomArr=generateRandomArr();
     const petsArr=generatePetsArray(randomArr,pets);
-    generateSlider(petsArr);
-    
+    generateSlider(petsArr);    
 }
