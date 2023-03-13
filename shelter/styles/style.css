@@ -103,12 +103,6 @@ body {
   }
 }
 
-.slider__wrapper {
-  overflow: hidden;
-  display: flex;
-  flex: 1;
-}
-
 .slider__items {
   display: none;
   flex: 1;
@@ -190,6 +184,7 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
+  display: flex;
 }
 
 .slider__items {
@@ -734,6 +729,7 @@ ul {
 
 .popup {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;

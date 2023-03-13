@@ -31,11 +31,7 @@
   }
 }
 
-.slider__wrapper{
-  overflow: hidden;
-  display: flex;
-  flex: 1;
-}
+
 
 .slider__items {
   display: none;
@@ -120,6 +116,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  display: flex;
 }
 
 
