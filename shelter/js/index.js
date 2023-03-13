@@ -5,84 +5,82 @@ import Popup from "./Popup.js";
 const tabletWidth = 768;
 const mobileWidth = 320;
 const displayedPets = countDisplayedPets();
-let previousArr=[];
+let pets;
+let previousArr = [];
+let currentItem = 0;
+let isEnable = true;
+let isBack=false;
+let items;
 
 async function getPetsJson(url) {
-    const response = await fetch(url);
-    const json = await response.json();
-    return json;
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
 }
-
 
 function countDisplayedPets() {
-    let displayedPets;
-    if (window.innerWidth > tabletWidth) {
-      displayedPets = 3;
-    } else if (window.innerWidth > mobileWidth) {
-      displayedPets = 2;
-    } else {
-      displayedPets = 1;
-    }
-  
-    return displayedPets;
+  let displayedPets;
+  if (window.innerWidth > tabletWidth) {
+    displayedPets = 3;
+  } else if (window.innerWidth > mobileWidth) {
+    displayedPets = 2;
+  } else {
+    displayedPets = 1;
   }
 
-
-function generateSliderItem(info) {
-    const sliderItem = document.createElement("DIV");
-    sliderItem.classList.add("slider__item");
-    sliderItem.innerHTML = `<div class="item__image"></div>
-                            <h3 class="item__name">${info.name}</h3>
-                            <button class="button button_card">Learn more</button>`;
-    const sliderImage = sliderItem.querySelector(".item__image");
-    sliderImage.style.backgroundImage = `url(${info.img})`;
-    const popup=new Popup(info);
-    sliderItem.addEventListener('click',popup.displayPopup);
-  
-  
-    return sliderItem;
-  }
-
-
-function generateSlider(petsArr){
-    const sliderItems=document.querySelector('.slider__items');
-    sliderItems.innerHTML='';
-
-    for (let i=0;i<displayedPets;i++){
-        const sliderItem=generateSliderItem(petsArr[i]);
-        sliderItems.append(sliderItem);
-    }
+  return displayedPets;
 }
 
-function generateRandomArr(){
-  const arr = [];  
-  while (arr.length < displayedPets) {    
+function generateSliderItem(info) {  
+  const sliderItem = document.createElement("DIV");
+  sliderItem.classList.add("slider__item");
+  sliderItem.innerHTML = `<div class="item__image"></div>
+                            <h3 class="item__name">${info.name}</h3>
+                            <button class="button button_card">Learn more</button>`;
+  const sliderImage = sliderItem.querySelector(".item__image");
+  sliderImage.style.backgroundImage = `url(${info.img})`;
+  const popup = new Popup(info);
+  sliderItem.addEventListener("click", popup.displayPopup);
+
+  return sliderItem;
+}
+
+function generateSlider(petsArr) {
+  const sliderItems = document.querySelector(".slider__items_active");
+  sliderItems.innerHTML = "";
+
+  for (let i = 0; i < displayedPets; i++) {
+    const sliderItem = generateSliderItem(petsArr[i]);
+    sliderItems.append(sliderItem);
+  }
+}
+
+function generateRandomArr() {
+  const arr = [];
+  while (arr.length < displayedPets) {
     const randomNum = Math.floor(Math.random() * 8);
     if (!arr.includes(randomNum) && !previousArr.includes(randomNum)) {
-      arr.push(randomNum);      
-    }    
+      arr.push(randomNum);
+    }
   }
-  previousArr=arr;
+  previousArr = arr;
   return arr;
 }
 
+function generatePetsArray(arr, pets) {
+  const petsArr = [];
+  arr.forEach((index) => {
+    petsArr.push(pets[index]);
+  });
 
-function generatePetsArray(arr,pets){
-    const petsArr=[];
-    arr.forEach(index=>{
-        petsArr.push(pets[index]);
-    })
-
-    return petsArr;
+  return petsArr;
 }
 
-window.onload= async ()=>{
-    const pets= await getPetsJson("./js/pets.json");
-    const randomArr=generateRandomArr();
-    const petsArr=generatePetsArray(randomArr,pets);
-    generateSlider(petsArr);
-    
-    const randomAr=generateRandomArr();
-    console.log(randomAr, randomArr)
-    
-}
+window.onload = async () => {
+  pets = await getPetsJson("./js/pets.json");
+  const randomArr = generateRandomArr();
+  const petsArr = generatePetsArray(randomArr, pets);
+  generateSlider(petsArr);
+  
+};
+

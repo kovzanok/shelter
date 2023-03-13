@@ -103,10 +103,19 @@ body {
   }
 }
 
-.slider__items {
+.slider__wrapper {
+  overflow: hidden;
   display: flex;
   flex: 1;
+}
+
+.slider__items {
+  display: none;
+  flex: 1;
   justify-content: space-around;
+}
+.slider__items_active {
+  display: flex;
 }
 @media (max-width: 740px) {
   .slider__items {
@@ -167,15 +176,6 @@ body {
 .item__image {
   width: 270px;
   height: 270px;
-}
-.item__image_catrine {
-  background-image: url("../assets/img/pets-katrine.png");
-}
-.item__image_jennifer {
-  background-image: url("../assets/img/pets-jennifer.png");
-}
-.item__image_woody {
-  background-image: url("../assets/img/pets-woody.png");
 }
 
 .item__name {
