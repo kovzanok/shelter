@@ -726,6 +726,11 @@ ul {
   background-color: #FAFAFA;
   display: flex;
 }
+@media (max-width: 1200px) {
+  .popup__body {
+    height: auto;
+  }
+}
 @media (max-width: 810px) {
   .popup__body {
     width: 82%;
@@ -749,12 +754,29 @@ ul {
 @media (max-width: 1200px) {
   .popup__image {
     background-position: center;
+    height: auto;
+    margin: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .popup__image {
+    margin: 0;
+  }
+}
+@media (max-width: 740px) {
+  .popup__image {
+    margin: 10px;
   }
 }
 @media (max-width: 810px) {
   .popup__image {
     background-position: initial;
     height: 350px;
+  }
+}
+@media (max-width: 320px) {
+  .popup__image {
+    display: none;
   }
 }
 
@@ -842,12 +864,12 @@ ul {
   margin-bottom: 11px;
 }
 .popup__item::before {
-  content: "•"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #F1CDB3; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  content: "•";
+  color: #F1CDB3;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 @media (max-width: 810px) {
   .popup__item {
