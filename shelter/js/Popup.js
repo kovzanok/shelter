@@ -71,5 +71,3 @@ export default class Popup {
     document.body.classList.toggle('lock');
   }
 }
-
-
