@@ -5,7 +5,7 @@ import Popup from "./Popup.js";
 const tabletWidth = 768;
 const mobileWidth = 320;
 const displayedPets = countDisplayedPets();
-
+let previousArr=[];
 
 async function getPetsJson(url) {
     const response = await fetch(url);
@@ -46,6 +46,7 @@ function generateSliderItem(info) {
 
 function generateSlider(petsArr){
     const sliderItems=document.querySelector('.slider__items');
+    sliderItems.innerHTML='';
 
     for (let i=0;i<displayedPets;i++){
         const sliderItem=generateSliderItem(petsArr[i]);
@@ -57,11 +58,11 @@ function generateRandomArr(){
   const arr = [];  
   while (arr.length < displayedPets) {    
     const randomNum = Math.floor(Math.random() * 8);
-    if (!arr.includes(randomNum)) {
+    if (!arr.includes(randomNum) && !previousArr.includes(randomNum)) {
       arr.push(randomNum);      
     }    
   }
-
+  previousArr=arr;
   return arr;
 }
 
@@ -79,5 +80,9 @@ window.onload= async ()=>{
     const pets= await getPetsJson("./js/pets.json");
     const randomArr=generateRandomArr();
     const petsArr=generatePetsArray(randomArr,pets);
-    generateSlider(petsArr);    
+    generateSlider(petsArr);
+    
+    const randomAr=generateRandomArr();
+    console.log(randomAr, randomArr)
+    
 }
