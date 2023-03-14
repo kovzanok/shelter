@@ -1,6 +1,11 @@
 .nav {
   display: flex;
   justify-content: space-between;
+
+  @include media-burger{
+    flex-direction: column;
+    margin-top: 41%;
+  }
 }
 
 .nav__item {
@@ -19,7 +24,20 @@
       width: 100%;
       height: 3px;
       background-color: $color-primary;
+
+      @include media-burger{
+        width: 76%;
+        left: auto;
+        top: 51px;
+      }
     }
+  }
+
+  @include media-burger{
+    @include font($size: 3.2rem, $height: 5.12rem);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 41px
   }
 }
 
@@ -58,4 +76,27 @@
     }
     
   }
+}
+
+
+.nav__logo{
+  display: none;
+  @include media-burger{
+    display: block;
+    padding: 25px 8px;
+  }
+}
+
+.nav__background{
+  opacity: 0;  
+  visibility: hidden;
+  position: fixed;
+  @extend %transition;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+ 
 }

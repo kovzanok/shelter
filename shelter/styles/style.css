@@ -1,11 +1,17 @@
 @charset "UTF-8";
-.card, .popup__button, .button, .nav__link {
+.card, .header__nav, .popup__button, .button, .hamburger, .nav__background, .nav__link {
   transition: all 0.3s ease-out;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 650px) {
+  .nav {
+    flex-direction: column;
+    margin-top: 41%;
+  }
 }
 
 .nav__item {
@@ -26,6 +32,22 @@
   width: 100%;
   height: 3px;
   background-color: #F1CDB3;
+}
+@media (max-width: 650px) {
+  .nav__item_active::after {
+    width: 76%;
+    left: auto;
+    top: 51px;
+  }
+}
+@media (max-width: 650px) {
+  .nav__item {
+    font-size: 3.2rem;
+    line-height: 5.12rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 41px;
+  }
 }
 
 .nav__link {
@@ -57,6 +79,28 @@
   }
 }
 
+.nav__logo {
+  display: none;
+}
+@media (max-width: 650px) {
+  .nav__logo {
+    display: block;
+    padding: 25px 8px;
+  }
+}
+
+.nav__background {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -83,8 +127,8 @@ body {
 }
 
 .slider__button {
-  width: 52px;
-  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   background-color: #FAFAFA;
 }
 @media (max-width: 740px) {
@@ -236,11 +280,15 @@ body {
   position: relative;
   width: 30px;
   height: 22px;
-  margin-right: 37px;
 }
 @media (max-width: 650px) {
   .hamburger {
     display: inline-block;
+  }
+}
+@media (max-width: 320px) {
+  .hamburger {
+    margin-right: 37px;
   }
 }
 .hamburger::before {
@@ -1157,6 +1205,13 @@ ul {
   width: 37%;
   padding: 6px 0 0 1px;
 }
+.header__nav_active ~ .header__burger .hamburger {
+  transform: rotate(90deg);
+}
+.header__nav_active + .nav__background {
+  opacity: 0.6;
+  visibility: visible;
+}
 @media (max-width: 1200px) {
   .header__nav {
     width: 62.7%;
@@ -1164,7 +1219,16 @@ ul {
 }
 @media (max-width: 650px) {
   .header__nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    right: -100%;
+    height: 100%;
+    width: 320px;
+    background-color: #292929;
+  }
+  .header__nav_active {
+    right: 0;
   }
 }
 
@@ -1205,11 +1269,15 @@ ul {
 @media (max-width: 650px) {
   .header__burger {
     display: flex;
+    position: relative;
+    z-index: 5;
     align-items: center;
+    padding-top: 25px;
   }
 }
 @media (max-width: 320px) {
   .header__burger {
+    padding-top: 0;
     width: 24.3%;
   }
 }

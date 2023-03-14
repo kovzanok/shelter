@@ -15,13 +15,35 @@
 .header__nav {
   width: 37%;
   padding: 6px 0 0 1px;
+  @extend %transition;
+
+  &_active ~ .header__burger {
+    .hamburger {
+      transform: rotate(90deg);
+    }
+  }
+
+  &_active + .nav__background {
+    opacity: 0.6;
+    visibility: visible;
+  }
 
   @include media-laptop {
     width: 62.7%;
   }
 
   @include media-burger {
-    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    right: -100%;
+    height: 100%;
+    width: 320px;
+    background-color: $color-darkest;
+
+    &_active {
+      right: 0;
+    }
   }
 }
 
@@ -42,9 +64,9 @@
     }
   }
 
-  .hamburger__line{
-    @include hamburger-line($color: black);    
-}
+  .hamburger__line {
+    @include hamburger-line($color: black);
+  }
 }
 
 .header__burger {
@@ -52,10 +74,14 @@
 
   @include media-burger {
     display: flex;
+    position: relative;
+    z-index: 5;
     align-items: center;
+    padding-top: 25px;
   }
 
   @include media-mobile {
+    padding-top: 0;
     width: 24.3%;
   }
 }
