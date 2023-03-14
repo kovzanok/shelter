@@ -19,7 +19,10 @@ export default class Burger {
     }
     else if(e.target.classList.contains("nav__background") || e.target.classList.contains("nav__link")){
         nav.classList.remove("header__nav_active");
-        Burger.toggleBodyLock();
+        if (document.body.classList.contains("lock")){
+          Burger.toggleBodyLock();
+        }
+        
     }   
   };
 
