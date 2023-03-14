@@ -10,8 +10,8 @@
 }
 
 .slider__button {
-  width: 52px;
-  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
   background-color: $color-background-card;
 
   &_left {
