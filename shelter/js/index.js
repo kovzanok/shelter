@@ -1,5 +1,6 @@
 console.log(``);
 
+import Burger from "./Burger.js";
 import Popup from "./Popup.js";
 
 const tabletWidth = 768;
@@ -81,6 +82,10 @@ function generatePetsArray(arr, pets) {
 }
 
 window.onload = async () => {
+  const header=document.querySelector('.header');
+  const burgerInstance=new Burger(header);
+  header.addEventListener('click',burgerInstance.burgerClickHandler)
+
   pets = await getPetsJson("./js/pets.json");
   const randomArr = generateRandomArr();
   displayed = randomArr;
