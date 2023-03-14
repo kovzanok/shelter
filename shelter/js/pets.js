@@ -1,6 +1,7 @@
 console.log(``);
 
 import Popup from "./Popup.js";
+import Burger from "./Burger.js";
 
 const tabletWidth = 768;
 const mobileWidth = 320;
@@ -53,6 +54,10 @@ async function getPetsJson(url) {
 }
 
 window.onload = async () => {
+  const header=document.querySelector('.header');
+  const burgerInstance=new Burger(header);
+  header.addEventListener('click',burgerInstance.burgerClickHandler);
+
   const petsArr = generatePaginationArr();
   console.log(petsArr);
   pets = await getPetsJson("./js/pets.json");

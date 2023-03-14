@@ -1262,6 +1262,11 @@ ul {
   display: inline-block;
   background-color: black;
 }
+@media (max-width: 650px) {
+  .header__our-pets .header__nav {
+    background-color: #F6F6F6;
+  }
+}
 
 .header__burger {
   display: none;
