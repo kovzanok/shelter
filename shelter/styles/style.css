@@ -36,6 +36,7 @@
   color: #FAFAFA;
 }
 .nav__link::after {
+  transition: all 0.1s;
   position: absolute;
   content: "";
   top: 23px;

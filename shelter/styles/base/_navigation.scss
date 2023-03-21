@@ -32,7 +32,8 @@
     color: $color-background-card;
   }
 
-  &::after {    
+  &::after {
+    transition: all 0.1s;
     position: absolute;
     content: "";
     top: 23px;
