@@ -29,10 +29,23 @@
 
 .nav__link {
   text-decoration: none;
+  position: relative;
   color: #CDCDCD;
 }
 .nav__link:hover {
   color: #FAFAFA;
+}
+.nav__link::after {
+  position: absolute;
+  content: "";
+  top: 23px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #F1CDB3;
+}
+.nav__link:active::after {
+  width: 100%;
 }
 
 .header__our-pets .nav__item {
