@@ -1,4 +1,4 @@
-.card, .button, .nav__link {
+.card, .button, .slider__item, .nav__link {
   transition: all 0.3s ease-out;
 }
 
@@ -81,10 +81,10 @@ body {
   justify-content: space-around;
 }
 .slider__items .slider__item:first-child {
-  padding-left: 10px;
+  margin-left: 7px;
 }
 .slider__items .slider__item:last-child {
-  padding-right: 10px;
+  margin-right: 8px;
 }
 
 .slider__item {
@@ -97,6 +97,9 @@ body {
   background-color: #FAFAFA;
   border-radius: 9px;
   cursor: pointer;
+}
+.slider__item:hover {
+  background-color: #FFFFFF;
 }
 .slider__item:hover .button {
   background-color: #FDDCC4;
