@@ -512,6 +512,9 @@ ul {
   background-color: #FDDCC4;
   border: 2px solid #FDDCC4;
 }
+.button:not([disabled]):active {
+  background-color: rgba(232, 154, 73, 0.9215686275);
+}
 .button_colored {
   background-color: #F1CDB3;
 }
