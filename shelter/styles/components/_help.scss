@@ -1,93 +1,87 @@
-.help__container{
-    padding-top: 76px;
-    padding-bottom: 103px;
+.help__container {
+  padding-top: 78px;
+  padding-bottom: 103px;
 }
 
-.help__title{
-    @include font($size: 3.5rem,$height: 4.55rem);
-    width: 358px;
-    margin: 0 auto;
-    text-align: center;
-    letter-spacing: 2px;
+.help__title {
+  @include font($size: 3.5rem, $height: 4.55rem);
+  width: 358px;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 2px;
 }
 
 .help__title,
-.service__text{    
-    font-family: $font-title;
-    color: $color-title;
-    
+.service__text {
+  font-family: $font-title;
+  color: $color-title;
 }
 
-.help__service-list{
-    height: 281px;
-    display: flex;
-    box-sizing: content-box;
-    align-content: space-between;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 60px;
-    >*{
-        margin: 0px 0px;
-    }
+.help__service-list {
+  height: 281px;
+  display: flex;
+  box-sizing: content-box;
+  align-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 58px;
+  > * {
+    margin: 0px 0px;
+  }
 }
 
-.service{
-    margin: 0 5.1%;
-    height: 113px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-    
+.service {
+  margin: 0 5.1%;
+  height: 113px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.service__image {
+  width: 60px;
+  height: 60px;
 
+  &_food {
+    background-image: url("../assets/icons/icon-pet-food.svg");
+  }
 
+  &_transportation {
+    background-image: url("../assets/icons/icon-transportation.svg");
+  }
 
-.service__image{
-    width: 60px;
-    height: 60px;
+  &_toys {
+    background-image: url("../assets/icons/icon-toys.svg");
+  }
 
-    &_food{
-        background-image: url('../assets/icons/icon-pet-food.svg');
-    }
+  &_bowls {
+    background-image: url("../assets/icons/icon-bowls-and-cups.svg");
+  }
 
-    &_transportation{
-        background-image: url('../assets/icons/icon-transportation.svg');
-    }
+  &_shampoos {
+    background-image: url("../assets/icons/icon-shampoos.svg");
+  }
 
-    &_toys{
-        background-image: url('../assets/icons/icon-toys.svg');
-    }
+  &_vitamins {
+    background-image: url("../assets/icons/icon-vitamins.svg");
+  }
 
-    &_bowls{
-        background-image: url('../assets/icons/icon-bowls-and-cups.svg');
-    }
+  &_medicine {
+    background-image: url("../assets/icons/icon-medicines.svg");
+  }
 
-    &_shampoos{
-        background-image: url('../assets/icons/icon-shampoos.svg');
-    }
+  &_collars {
+    background-image: url("../assets/icons/icon-collars-leashes.svg");
+  }
 
-    &_vitamins{
-        background-image: url('../assets/icons/icon-vitamins.svg');
-    }
-
-    &_medicine{
-        background-image: url('../assets/icons/icon-medicines.svg');
-    }
-
-    &_collars{
-        background-image: url('../assets/icons/icon-collars-leashes.svg');
-    }
-
-    &_sleep{
-        background-image: url('../assets/icons/icon-sleeping-area.svg');
-    }
+  &_sleep {
+    background-image: url("../assets/icons/icon-sleeping-area.svg");
+  }
 }
 
-.service__text{
-    @include font($size: 2rem,$height: 2.3rem);
-    margin: 0;
-    letter-spacing: 1px;
+.service__text {
+  @include font($size: 2rem, $height: 2.3rem);
+  margin: 0;
+  letter-spacing: 1px;
 }

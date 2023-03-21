@@ -3,7 +3,7 @@
 }
 
 .donation__container{
-    padding-top: 77px;
+    padding-top: 79px;
     padding-bottom: 86px;
 }
 
@@ -31,7 +31,7 @@
 
 .donation__text{
     @include font($size: 1.5rem,$height: 1.65rem);
-    margin: 20px 0 20px;
+    margin: 20px 0 18px;
     letter-spacing: 1px;
 }
 

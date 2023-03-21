@@ -72,6 +72,7 @@ body {
   width: 52px;
   height: 52px;
   background-color: #FAFAFA;
+  padding-top: 6px;
 }
 
 .slider__items {
@@ -580,7 +581,7 @@ ul {
 }
 
 .about__container {
-  padding: 79px 0 99px;
+  padding: 80px 0 100px;
 }
 
 .about__image {
@@ -600,7 +601,7 @@ ul {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: #545454;
   padding-right: 38%;
-  letter-spacing: 2px;
+  letter-spacing: 2.2px;
 }
 
 .info__text {
@@ -616,7 +617,7 @@ ul {
 }
 
 .donation__container {
-  padding-top: 77px;
+  padding-top: 79px;
   padding-bottom: 86px;
 }
 
@@ -644,7 +645,7 @@ ul {
 .donation__text {
   font-size: 1.5rem;
   line-height: 1.65rem;
-  margin: 20px 0 20px;
+  margin: 20px 0 18px;
   letter-spacing: 1px;
 }
 
@@ -693,7 +694,7 @@ ul {
 }
 
 .help__container {
-  padding-top: 76px;
+  padding-top: 78px;
   padding-bottom: 103px;
 }
 
@@ -719,7 +720,7 @@ ul {
   align-content: space-between;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 60px;
+  padding-top: 58px;
 }
 .help__service-list > * {
   margin: 0px 0px;
@@ -814,7 +815,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 61px;
+  padding-bottom: 59px;
 }
 
 .pets__title > * {
@@ -959,7 +960,8 @@ ul {
 }
 
 .header__container {
-  padding-top: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-between;
 }
