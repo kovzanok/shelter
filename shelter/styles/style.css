@@ -66,6 +66,14 @@
   text-shadow: 0px 0px 0px #292929;
 }
 
+@font-face {
+  font-family: Georgia;
+  src: url("../assets/fonts/georgia/");
+}
+@font-face {
+  font-family: Arial;
+  src: url("../../assets/fonts/arial/");
+}
 html {
   font-size: 10px;
   scroll-behavior: smooth;
@@ -73,7 +81,7 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .slider {
@@ -135,7 +143,7 @@ body {
 }
 
 .item__name {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 2.272rem;
   text-align: center;
@@ -147,7 +155,7 @@ body {
 }
 
 .logo__title {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   color: #F1CDB3;
   font-size: 3.2rem;
   line-height: 3.52rem;
@@ -499,7 +507,7 @@ ul {
 .button {
   font-size: 1.7rem;
   line-height: 2.2rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   letter-spacing: 1px;
   color: #292929;
   border-radius: 100px;
@@ -593,7 +601,7 @@ ul {
 }
 
 .card__name {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 2.272rem;
   text-align: center;
@@ -618,7 +626,7 @@ ul {
 .info__title {
   font-size: 3.5rem;
   line-height: 4.55rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   color: #545454;
   padding-right: 38%;
   letter-spacing: 2.2px;
@@ -650,7 +658,7 @@ ul {
 }
 
 .donation__info {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   color: #545454;
   padding-left: 29px;
 }
@@ -706,7 +714,7 @@ ul {
 .donation__subscription {
   width: 363px;
   font-style: italic;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: #B2B2B2;
@@ -729,7 +737,7 @@ ul {
 
 .help__title,
 .service__text {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   color: #545454;
 }
 
@@ -805,7 +813,7 @@ ul {
 .not-only__title {
   font-size: 4.4rem;
   line-height: 5.7rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   color: #FFFFFF;
   padding-right: 94px;
 }
@@ -839,7 +847,7 @@ ul {
 }
 
 .pets__title > * {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   font-size: 3.5rem;
   line-height: 4.55rem;
   color: #545454;
@@ -865,7 +873,7 @@ ul {
 }
 
 .our-friends__title > * {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   font-size: 3.5rem;
   line-height: 4.55rem;
   color: #545454;
@@ -908,7 +916,7 @@ ul {
 .location__title {
   font-size: 3.5rem;
   line-height: 4.55rem;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   color: #FFFFFF;
   letter-spacing: 2px;
 }
@@ -918,7 +926,7 @@ ul {
   font-size: 2rem;
   line-height: 2.3rem;
   color: #F1CDB3;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, serif;
   display: flex;
   align-items: center;
 }
