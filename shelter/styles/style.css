@@ -570,6 +570,9 @@ ul {
   background-color: #FDDCC4;
   border: 2px solid #FDDCC4;
 }
+.card__item:hover .button:active {
+  background-color: rgba(232, 154, 73, 0.9215686275);
+}
 
 .card__image {
   width: 270px;
