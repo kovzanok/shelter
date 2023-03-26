@@ -1,4 +1,4 @@
-.card, .button, .slider__item, .nav__link {
+.card, .card__item, .button, .slider__item, .nav__link {
   transition: all 0.3s ease-out;
 }
 
@@ -565,6 +565,9 @@ ul {
   background-color: #FAFAFA;
   border-radius: 9px;
   cursor: pointer;
+}
+.card__item:hover {
+  background-color: #FFFFFF;
 }
 .card__item:hover .button {
   background-color: #FDDCC4;
