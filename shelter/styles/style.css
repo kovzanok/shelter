@@ -1,4 +1,5 @@
-.card, .card__item, .button, .slider__item, .nav__link {
+.contact,
+.location, .card, .card__item, .button, .slider__item, .nav__link {
   transition: all 0.3s ease-out;
 }
 
@@ -935,6 +936,14 @@ ul {
   font-family: Georgia, serif;
   display: flex;
   align-items: center;
+}
+.contact:hover,
+.location:hover {
+  filter: saturate(500%);
+}
+.contact:active,
+.location:active {
+  filter: hue-rotate(100deg);
 }
 
 .locations {
