@@ -1,5 +1,4 @@
 .button {
-  
   @include font($size: 1.7rem, $height: 2.2rem);
   font-family: $font-title;
   letter-spacing: 1px;
@@ -13,6 +12,10 @@
     &:hover {
       background-color: $color-primary-light;
       border: 2px solid $color-primary-light;
+    }
+
+    &:active {
+      background-color: #e89a49eb;
     }
   }
 
@@ -47,7 +50,6 @@
   &_nonactive {
     color: $color-dark;
     border: 2px solid $color-dark;
-    
   }
 
   &_active {

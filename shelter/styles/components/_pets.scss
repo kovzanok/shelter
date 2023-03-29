@@ -14,12 +14,13 @@
   }
 }
 
-.pets__title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 61px;
+.pets__title{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 59px;
+
 
   > * {
     font-family: $font-title;

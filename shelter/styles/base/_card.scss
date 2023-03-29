@@ -8,10 +8,15 @@
   background-color: $color-background-card;
   border-radius: 9px;
   cursor: pointer;
+  @extend %transition;
   &:hover {
+    background-color: $color-light;
     .button {
       background-color: $color-primary-light;
       border: 2px solid $color-primary-light;
+      &:active {
+        background-color: #e89a49eb;
+      }
     }
   }
 
@@ -25,8 +30,8 @@
   &:nth-child(4),
   &:nth-child(5),
   &:nth-child(6) {
-    @include media-mobile{
-        display: none;
+    @include media-mobile {
+      display: none;
     }
   }
 

@@ -8,7 +8,7 @@
 }
 
 .footer__container{
-    padding-top: 41px;
+    padding-top: 39px;
 
     @include media-footer{
         padding-top: 14px;
@@ -74,14 +74,20 @@
     }
 }
 
-
 .contact,
-.location{
-    @include font($size: 2rem,$height: 2.3rem);
-    color: $color-primary;
-    font-family: $font-title;
-    display: flex;
-    align-items: center;
+.location {
+  @include font($size: 2rem, $height: 2.3rem);
+  @extend %transition;
+  color: $color-primary;
+  font-family: $font-title;
+  display: flex;
+  align-items: center;
+  &:hover {
+    filter: saturate(500%);
+  }
+  &:active {
+    filter: hue-rotate(100deg);
+  }
 }
 
 .locations{
@@ -125,10 +131,10 @@
     }
 }
 
-.contacts{
-    display: flex;
-    flex-direction: column;
-    margin: 40px 0 0;
+.contacts {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0;
 }
 
 .contact{
@@ -148,23 +154,23 @@
 }
 
 .contact__link,
-.location__link{
-    display: flex;
-    align-items: center;
+.location__link {
+  display: flex;
+  align-items: center;
 }
 
-.contact__marker{    
-    display: inline-block;
-    width: 40px;
-    height: 32px;
-    margin-right: 20px;
-    &_email{
-        background-image: url('../assets/icons/icon-email.svg');
-    }
+.contact__marker {
+  display: inline-block;
+  width: 40px;
+  height: 32px;
+  margin-right: 20px;
+  &_email {
+    background-image: url("../assets/icons/icon-email.svg");
+  }
 
-    &_tel{
-        background-image: url('../assets/icons/icon-phone.svg');
-    }
+  &_tel {
+    background-image: url("../assets/icons/icon-phone.svg");
+  }
 }
 
 
