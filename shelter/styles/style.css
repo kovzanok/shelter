@@ -764,6 +764,11 @@ ul {
     background-image: url("../assets/img/footer-gradient-background-tablet.png");
   }
 }
+@media (max-width: 320px) {
+  .footer {
+    background-image: url("../assets/img/gradient-background-mobile.png");
+  }
+}
 
 .footer__container {
   padding-top: 39px;
@@ -1066,6 +1071,16 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 768px) {
+  .gradient-background {
+    background-image: url("../assets/img/start-screen-gradient-background-tablet.png");
+  }
+}
+@media (max-width: 320px) {
+  .gradient-background {
+    background-image: url("../assets/img/gradient-background-mobile.png");
+  }
+}
 
 .layout-2-columns {
   display: flex;
@@ -1107,12 +1122,14 @@ ul {
   .layout-3-columns {
     justify-content: center;
   }
-  .layout-3-columns .footer__location, .layout-3-columns .footer__contacts {
+  .layout-3-columns .footer__location,
+  .layout-3-columns .footer__contacts {
     flex-basis: 50%;
   }
 }
 @media (max-width: 570px) {
-  .layout-3-columns .footer__location, .layout-3-columns .footer__contacts {
+  .layout-3-columns .footer__location,
+  .layout-3-columns .footer__contacts {
     flex-basis: 100%;
   }
 }
