@@ -23,17 +23,40 @@
     .donation__image{
         flex-basis: 59%;
     }
+
+    @include media-pre-tablet{
+        flex-direction: column;
+    }
 }
 
 .layout-3-columns{
     display: flex;
     justify-content: space-between;
+
     >*{
-        flex-basis: 24%;
+        flex-basis: 24%;        
     }
 
     .footer__location{
         flex-basis: 26%;
+    }
+
+    @include media-help-list{
+        flex-wrap: wrap;
+    }
+
+    @include media-footer{
+        justify-content: center;
+
+        .footer__location,.footer__contacts{
+            flex-basis: 50%;
+        }        
+    }
+
+    @include media-mobile-help-list{
+        .footer__location,.footer__contacts{
+            flex-basis: 100%;
+        }
     }
 }
 
@@ -44,7 +67,10 @@
     align-items: stretch;
     min-height: 930px;
     >*{
-        flex-basis: 20%;
-        
+        flex-basis: 20%;        
+    }
+
+    @include media-laptop{
+        justify-content: center;
     }
 }

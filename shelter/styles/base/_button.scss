@@ -9,9 +9,11 @@
 
   &:not([disabled]) {
     cursor: pointer;
-    &:hover {
-      background-color: $color-primary-light;
-      border: 2px solid $color-primary-light;
+    @include media-hover {
+      &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+      }
     }
 
     &:active {
@@ -33,7 +35,10 @@
     height: 52px;
     margin-bottom: 27px;
     background-color: $color-background-card;
-    
+
+    @include media-tablet {
+      padding-top: 4px;
+    }
   }
 
   &_pets {

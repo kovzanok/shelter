@@ -1,19 +1,19 @@
 @font-face {
-    font-family: Georgia;
-    src: url('../assets/fonts/georgia/');
+  font-family: Georgia;
+  src: url("../assets/fonts/georgia/");
 }
 
 @font-face {
-    font-family: Arial;
-    src: url('../assets/fonts/arial/');
+  font-family: Arial;
+  src: url("../assets/fonts/arial/");
 }
 
-html{
-    font-size: 10px;
-    scroll-behavior: smooth;
-    overflow-y: overlay;
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  overflow-y: overlay;
 }
 
-body{
-    font-family: $font-text;
+body {
+  font-family: $font-text;
 }

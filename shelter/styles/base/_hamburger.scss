@@ -1,0 +1,32 @@
+
+
+.hamburger{
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 22px;
+    margin-right: 37px;
+    @include media-burger{
+        display: inline-block;
+    }
+
+    @include media-mobile {
+      margin-right: 10px;
+    }
+    &::before{
+        @include hamburger-line($color: $color-primary);
+        top:0;
+        left: 0;
+    }
+    &::after{
+        @include hamburger-line($color: $color-primary);
+        bottom:0;
+        left: 0;
+    }
+}
+
+.hamburger__line{
+    @include hamburger-line($color: $color-primary);
+    top: calc(50% - 1.5px);
+    left:0;
+}

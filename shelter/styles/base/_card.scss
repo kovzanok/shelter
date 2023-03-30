@@ -9,15 +9,38 @@
   border-radius: 9px;
   cursor: pointer;
   @extend %transition;
-  &:hover {
-    background-color: $color-light;
-    .button {
-      background-color: $color-primary-light;
-      border: 2px solid $color-primary-light;
-      &:active {
-        background-color: #e89a49eb;
+  @include media-hover {
+    &:hover {
+      background-color: $color-light;
+      .button {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+        &:active {
+          background-color: #e89a49eb;
+        }
       }
     }
+  }
+
+  &:nth-child(7),
+  &:nth-child(8) {
+    @include media-tablet {
+      display: none;
+    }
+  }
+
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    @include media-mobile {
+      display: none;
+    }
+  }
+
+  @include media-laptop {
+    margin-bottom: 33px;
+    margin-left: 19px;
+    margin-right: 19px;
   }
 }
 
