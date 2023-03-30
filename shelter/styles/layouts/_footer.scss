@@ -5,6 +5,10 @@
   @include media-footer {
     background-image: url("../assets/img/footer-gradient-background-tablet.png");
   }
+
+  @include media-mobile {
+    background-image: url("../assets/img/gradient-background-mobile.png");
+  }
 }
 
 .footer__container {
