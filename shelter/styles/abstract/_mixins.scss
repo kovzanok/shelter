@@ -1,61 +1,91 @@
-@mixin font($size,$height: $size){
-    font-size: $size;
-    line-height: $height;    
+@mixin font($size, $height: $size) {
+  font-size: $size;
+  line-height: $height;
 }
 
-@mixin hamburger-line($color){
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    display: inline-block;
-    background-color: $color;    
+@mixin hamburger-line($color) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  display: inline-block;
+  background-color: $color;
 }
 
-@mixin media-laptop{
-    @media (max-width: $content-width){@content;}
+@mixin media-hover {
+  @media (hover: hover) {
+    @content;
+  }
 }
 
-@mixin media-help-list{
-    @media (max-width: $help-list-breakpoint-width){@content;}
+@mixin media-laptop {
+  @media (max-width: $content-width) {
+    @content;
+  }
 }
 
-@mixin media-slider{
-    @media (max-width: $slider-breakpoint-width){@content;}
+@mixin media-help-list {
+  @media (max-width: $help-list-breakpoint-width) {
+    @content;
+  }
 }
 
-@mixin media-pre-tablet{
-    @media (max-width: $pre-tablet-width){@content;}
+@mixin media-slider {
+  @media (max-width: $slider-breakpoint-width) {
+    @content;
+  }
 }
 
-@mixin media-footer{
-    @media (max-width: $footer-breakpoint-width){@content;}
+@mixin media-pre-tablet {
+  @media (max-width: $pre-tablet-width) {
+    @content;
+  }
 }
 
-@mixin media-tablet{
-    @media (max-width: $tablet-width){@content;}
+@mixin media-footer {
+  @media (max-width: $footer-breakpoint-width) {
+    @content;
+  }
 }
 
-@mixin media-slider-buttons{
-    @media (max-width: $slider-buttons-breakpoint-width){@content;}
+@mixin media-tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
 }
 
-@mixin media-burger{
-    @media (max-width: $burger-width){@content;}
+@mixin media-slider-buttons {
+  @media (max-width: $slider-buttons-breakpoint-width) {
+    @content;
+  }
 }
 
-@mixin media-slider-items{
-    @media (max-width: $slider-items-breakpoint){@content;}
+@mixin media-burger {
+  @media (max-width: $burger-width) {
+    @content;
+  }
 }
 
-@mixin media-mobile-help-list{
-    @media (max-width: $help-list-mobile-breakpoint-width){@content;}
+@mixin media-slider-items {
+  @media (max-width: $slider-items-breakpoint) {
+    @content;
+  }
 }
 
-@mixin media-pre-mobile{
-    @media (max-width: $pre-mobile-width){@content;}
+@mixin media-mobile-help-list {
+  @media (max-width: $help-list-mobile-breakpoint-width) {
+    @content;
+  }
 }
 
-@mixin media-mobile{
-    @media (max-width: $mobile-width){@content;}
+@mixin media-pre-mobile {
+  @media (max-width: $pre-mobile-width) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
 }

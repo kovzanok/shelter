@@ -152,12 +152,14 @@ body {
   border-radius: 9px;
   cursor: pointer;
 }
-.slider__item:hover {
-  background-color: #FFFFFF;
-}
-.slider__item:hover .button {
-  background-color: #FDDCC4;
-  border: 2px solid #FDDCC4;
+@media (hover: hover) {
+  .slider__item:hover {
+    background-color: #FFFFFF;
+  }
+  .slider__item:hover .button {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }
 }
 .slider__item:first-child {
   padding-left: 10px;
@@ -629,9 +631,11 @@ ul {
 .button:not([disabled]) {
   cursor: pointer;
 }
-.button:not([disabled]):hover {
-  background-color: #FDDCC4;
-  border: 2px solid #FDDCC4;
+@media (hover: hover) {
+  .button:not([disabled]):hover {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }
 }
 .button:not([disabled]):active {
   background-color: rgba(232, 154, 73, 0.9215686275);
@@ -684,15 +688,17 @@ ul {
   border-radius: 9px;
   cursor: pointer;
 }
-.card__item:hover {
-  background-color: #FFFFFF;
-}
-.card__item:hover .button {
-  background-color: #FDDCC4;
-  border: 2px solid #FDDCC4;
-}
-.card__item:hover .button:active {
-  background-color: rgba(232, 154, 73, 0.9215686275);
+@media (hover: hover) {
+  .card__item:hover {
+    background-color: #FFFFFF;
+  }
+  .card__item:hover .button {
+    background-color: #FDDCC4;
+    border: 2px solid #FDDCC4;
+  }
+  .card__item:hover .button:active {
+    background-color: rgba(232, 154, 73, 0.9215686275);
+  }
 }
 @media (max-width: 768px) {
   .card__item:nth-child(7), .card__item:nth-child(8) {
@@ -845,9 +851,11 @@ ul {
   display: flex;
   align-items: center;
 }
-.contact:hover,
-.location:hover {
-  filter: saturate(500%);
+@media (hover: hover) {
+  .contact:hover,
+  .location:hover {
+    filter: saturate(500%);
+  }
 }
 .contact:active,
 .location:active {
@@ -1373,8 +1381,10 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-.card:hover {
-  background-color: #FDDCC4;
+@media (hover: hover) {
+  .card:hover {
+    background-color: #FDDCC4;
+  }
 }
 @media (max-width: 500px) {
   .card {

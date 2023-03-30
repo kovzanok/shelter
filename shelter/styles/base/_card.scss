@@ -9,13 +9,15 @@
   border-radius: 9px;
   cursor: pointer;
   @extend %transition;
-  &:hover {
-    background-color: $color-light;
-    .button {
-      background-color: $color-primary-light;
-      border: 2px solid $color-primary-light;
-      &:active {
-        background-color: #e89a49eb;
+  @include media-hover {
+    &:hover {
+      background-color: $color-light;
+      .button {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+        &:active {
+          background-color: #e89a49eb;
+        }
       }
     }
   }
