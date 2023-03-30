@@ -146,6 +146,7 @@
     @include media-mobile{
         &:first-child{
             padding-left: 0;
+            margin-bottom: 39px;
         }
         &:nth-child(2){
             padding-left: 6px  ;

@@ -41,6 +41,9 @@
   }
   .slider__item:first-child {
     padding-left: 7px;
+    @include media-tablet {
+      padding-left: 0;
+    }
   }
 
   .slider__item:last-child {

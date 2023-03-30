@@ -10,7 +10,7 @@
   }
 
   @include media-pre-mobile{
-    padding-top: 12.5%;
+    padding-top: 13.5%;
   }
 }
 
@@ -30,7 +30,7 @@
   }
 
   @include media-pre-mobile {
-    padding-bottom: 43px;
+    padding-bottom: 40px;
 
     > * {
       @include font($size: 2.5rem, $height: 3.25rem);
