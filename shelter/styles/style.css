@@ -223,7 +223,7 @@ body {
   height: 22px;
   margin-right: 37px;
 }
-@media (max-width: 650px) {
+@media (max-width: 767px) {
   .hamburger {
     display: inline-block;
   }
@@ -1013,7 +1013,7 @@ ul {
     width: 62.7%;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 767px) {
   .header__nav {
     display: none;
   }
@@ -1053,7 +1053,7 @@ ul {
 .header__burger {
   display: none;
 }
-@media (max-width: 650px) {
+@media (max-width: 767px) {
   .header__burger {
     display: flex;
     align-items: center;
