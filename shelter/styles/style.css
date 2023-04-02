@@ -1174,6 +1174,7 @@ ul {
 @media (max-width: 960px) {
   .about__container {
     padding-top: 8.5%;
+    padding-bottom: 12.8%;
   }
 }
 @media (max-width: 500px) {
@@ -1712,7 +1713,7 @@ ul {
 }
 @media (max-width: 960px) {
   .pets__container {
-    padding-top: 15.5%;
+    padding-top: 10.5%;
   }
 }
 @media (max-width: 500px) {
