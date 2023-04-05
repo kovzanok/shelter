@@ -5,7 +5,7 @@ import Popup from "./Popup.js";
 
 const tabletWidth = 768;
 const mobileWidth = 320;
-const displayedPets = countDisplayedPets();
+const displayedPets = 3;
 let pets;
 let previousArr = [];
 let currentItem = 0;
@@ -23,7 +23,7 @@ async function getPetsJson(url) {
   return json;
 }
 
-function countDisplayedPets() {
+/*function countDisplayedPets() {
   let displayedPets;
   if (window.innerWidth > tabletWidth) {
     displayedPets = 3;
@@ -34,7 +34,7 @@ function countDisplayedPets() {
   }
 
   return displayedPets;
-}
+}*/
 
 function generateSliderItem(info) {
   const sliderItem = document.createElement("DIV");
