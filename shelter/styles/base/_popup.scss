@@ -13,8 +13,8 @@
 
 .popup__button {
   position: absolute;
-  top: -52px;
-  right: -45px;
+  top: -50px;
+  right: -43px;
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -41,6 +41,7 @@
 
 .popup__body {
   position: relative;
+  max-width: 900px;
   width: 70%;
   height: 500px;
   border-radius: 9px;
