@@ -5,8 +5,36 @@ import Burger from "./Burger.js";
 
 const tabletWidth = 768;
 const mobileWidth = 320;
-const displayedPets = countDisplayedPets(window.innerWidth);
+const displayedPets = countDisplayedPets();
 let pets, groupedArr;
+
+function chunk(array,length) {
+  const chunkedArr=[];
+  let subArray=[];
+  array.forEach(item=>{
+    subArray.push(item)
+    if (subArray.length===length) {
+      chunkedArr.push(subArray);
+      subArray=[];
+    }
+  })
+  return chunkedArr;
+}
+
+function zip(array) {
+  const rows = array.length;
+  const  cols = array[0].length;
+  const transposedArray = [];
+  for (let i = 0; i < cols; i++) {
+    transposedArray[i] = Array(rows);
+  }
+  for (let j = 0; j < rows; j++) {
+    for (let k = 0; k < cols; k++) {
+      transposedArray[k][j] = array[j][k];
+    }
+  }
+  return transposedArray;
+}
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
@@ -30,16 +58,16 @@ function generatePaginationArr() {
     });
     return a;
   } else if (pages === 8) {
-    let c = _.zip(...a);
+    let c = zip(a);
     c.forEach((b) => {
       shuffle(b);
     });
     return c;
   } else {
-    let c = _.zip(...a);
+    let c = zip(a);
 
     let d = c.map((b) => {
-      return _.chunk(b, 3);
+      return chunk(b, 3);
     });
     shuffle(d)
 
@@ -67,7 +95,7 @@ window.onload = async () => {
   pageButtons.addEventListener("click", changePage);
 };
 
-function countDisplayedPets(windowWidth) {
+function countDisplayedPets() {
   let displayedPets;
   if (window.innerWidth > tabletWidth) {
     displayedPets = 8;
