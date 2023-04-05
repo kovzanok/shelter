@@ -17,9 +17,9 @@ export default class Burger {
       }
       Burger.toggleBodyLock();
     }
-    else if(e.target.classList.contains("nav__background") || e.target.classList.contains("nav__link")){
+    else if(e.target.classList.contains("nav__background") || e.target.classList.contains("nav__link") || e.target.classList.contains("nav__item_active")){
         nav.classList.remove("header__nav_active");
-        if (document.body.classList.contains("lock")){
+        if (document.documentElement.classList.contains("lock")){
           Burger.toggleBodyLock();
         }
         
@@ -27,6 +27,6 @@ export default class Burger {
   };
 
   static toggleBodyLock() {
-    document.body.classList.toggle("lock");
+    document.documentElement.classList.toggle("lock");
   }
 }
