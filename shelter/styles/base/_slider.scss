@@ -7,15 +7,6 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-.slider {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @include media-slider-buttons {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 
 .slider__button {
@@ -41,14 +32,12 @@
   }
 }
 
-
-
 .slider__items {
   display: none;
   flex: 1;
   justify-content: space-around;
 
-  &_active{
+  &_active {
     display: flex;
   }
 
@@ -88,24 +77,11 @@
       padding-right: 0;
     }
   }
-    @include media-pre-mobile {
-      padding-right: 0;
-    }
-  }
 
   &:nth-child(2) {
     @include media-pre-tablet {
       padding-left: 10px;
     }
-  &:nth-child(2) {
-    @include media-pre-tablet {
-      padding-left: 10px;
-    }
-
-    @include media-slider-items {
-      display: none;
-    }
-  }
     @include media-slider-items {
       display: none;
     }
@@ -113,13 +89,6 @@
 
   &:nth-child(3) {
     padding-right: 10px;
-  &:nth-child(3) {
-    padding-right: 10px;
-
-    @include media-slider {
-      display: none;
-    }
-  }
     @include media-slider {
       display: none;
     }
@@ -138,70 +107,66 @@
   letter-spacing: 1px;
 }
 
-
-
-.slider__wrapper{
+.slider__wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   display: flex;
 }
 
-
-.slider__items{
+.slider__items {
   display: none;
   position: relative;
   animation: 0.5s ease-in-out;
-  &_active,&_next{
-      display: flex;
+  &_active,
+  &_next {
+    display: flex;
   }
-  &_next{
-      position: absolute;
-      top: 0;
-      width: 100%;
-  }
-
-  &_to-left{
-      animation-name: left; 
+  &_next {
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
-  &_to-right{
-      animation-name: right;
-      animation-direction: reverse; 
+  &_to-left {
+    animation-name: left;
   }
 
-  &_from-left{
-      animation-name: left;
-      animation-direction: reverse;  
+  &_to-right {
+    animation-name: right;
+    animation-direction: reverse;
   }
 
-  &_from-right{
-      animation-name: right;
+  &_from-left {
+    animation-name: left;
+    animation-direction: reverse;
+  }
+
+  &_from-right {
+    animation-name: right;
   }
 }
 
-
-@keyframes left{
-  from{
-      left: 0;
+@keyframes left {
+  from {
+    left: 0;
   }
-  to{
-      left: -100%;
-  }
-}
-
-@keyframes right{
-  from{
-      left: 100%;
-  }
-  to{
-      left: 0;
+  to {
+    left: -100%;
   }
 }
-.item__name{
-    font-family: $font-title;
-    @include font($size: 2rem,$height: 2.272rem);
-    text-align: center;
-    letter-spacing: 1px;
 
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+.item__name {
+  font-family: $font-title;
+  @include font($size: 2rem, $height: 2.272rem);
+  text-align: center;
+  letter-spacing: 1px;
 }
