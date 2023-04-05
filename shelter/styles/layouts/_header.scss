@@ -1,5 +1,6 @@
 .header__container {
-  padding-top: 4.7%;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-between;
 
@@ -8,8 +9,14 @@
   }
 
   @include media-mobile {
-    padding-top: 9.3%;
+    padding-top: 9.3%;    
   }
+}
+
+.header__logo {
+  @include media-mobile {
+    padding-left: 10px;
+  }  
 }
 
 .header__nav {
@@ -89,6 +96,7 @@
 
   @include media-mobile {
     padding-top: 0;
+    justify-content: end;
     width: 24.3%;
   }
 }

@@ -3,8 +3,11 @@
 
 .not-only__container {
   padding-top: 57px;
+  @include media-tablet {
+    padding-top: 27px;
+  }
   @include media-pre-mobile{
-    padding-top: 60px;
+    padding-top: 29px;
   }
 }
 

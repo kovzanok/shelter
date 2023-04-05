@@ -1,75 +1,83 @@
-.gradient-background{
-    background: url(noise_lines_transparent@2X.png),
-    radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),#211f20;
+.gradient-background {
+  background-image: url("../assets/img/start-screen-gradient-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include media-tablet {
+    background-image: url("../assets/img/start-screen-gradient-background-tablet.png");
+  }
+  @include media-mobile {
+    background-image: url("../assets/img/gradient-background-mobile.png");
+  }
 }
 
+.layout-2-columns {
+  display: flex;
 
-.layout-2-columns{
-    display: flex;
+  > * {
+    flex-basis: 50%;
+  }
 
-    >*{
-        flex-basis: 50%;
-    }
+  .not-only__info {
+    flex-basis: 42%;
+  }
 
-    .not-only__info{
-        flex-basis: 42%;
-    }
+  .about__image {
+    flex-basis: 49.5%;
+  }
 
-    .about__image{
-        flex-basis: 49.5%;
-    }
+  .donation__image {
+    flex-basis: 59%;
+  }
 
-    .donation__image{
-        flex-basis: 59%;
-    }
-
-    @include media-pre-tablet{
-        flex-direction: column;
-    }
+  @include media-pre-tablet {
+    flex-direction: column;
+  }
 }
 
-.layout-3-columns{
-    display: flex;
-    justify-content: space-between;
+.layout-3-columns {
+  display: flex;
+  justify-content: space-between;
 
-    >*{
-        flex-basis: 24%;        
-    }
+  > * {
+    flex-basis: 24%;
+  }
 
-    .footer__location{
-        flex-basis: 26%;
-    }
+  .footer__location {
+    flex-basis: 26%;
+  }
 
-    @include media-help-list{
-        flex-wrap: wrap;
-    }
-
-    @include media-footer{
-        justify-content: center;
-
-        .footer__location,.footer__contacts{
-            flex-basis: 50%;
-        }        
-    }
-
-    @include media-mobile-help-list{
-        .footer__location,.footer__contacts{
-            flex-basis: 100%;
-        }
-    }
-}
-
-.layout-4-columns{
-    display: flex;
+  @include media-help-list {
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: stretch;
-    min-height: 930px;
-    >*{
-        flex-basis: 20%;        
-    }
+  }
 
-    @include media-laptop{
-        justify-content: center;
+  @include media-footer {
+    justify-content: center;
+
+    .footer__location,
+    .footer__contacts {
+      flex-basis: 50%;
     }
+  }
+
+  @include media-mobile-help-list {
+    .footer__location,
+    .footer__contacts {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.layout-4-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 930px;
+  > * {
+    flex-basis: 20%;
+  }
+
+  @include media-laptop {
+    justify-content: center;
+  }
 }

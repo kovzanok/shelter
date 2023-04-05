@@ -1,12 +1,23 @@
-html{
-    font-size: 10px;
-    scroll-behavior: smooth;
+@font-face {
+  font-family: Georgia;
+  src: url("../assets/fonts/georgia/");
 }
 
-body{
-    font-family: $font-text;
+@font-face {
+  font-family: Arial;
+  src: url("../assets/fonts/arial/");
 }
 
-.lock{
-    overflow: hidden;
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+  overflow-y: overlay;
+}
+
+body {
+  font-family: $font-text;
+}
+
+.lock {
+  overflow: hidden;
 }

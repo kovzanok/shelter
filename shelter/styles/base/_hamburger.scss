@@ -10,8 +10,9 @@
     @include media-burger{
         display: inline-block;
     }
-    @include media-mobile{
-        margin-right: 37px;
+
+    @include media-mobile {
+      margin-right: 10px;
     }
     &::before{
         @include hamburger-line($color: $color-primary);
