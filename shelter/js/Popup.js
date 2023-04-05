@@ -14,7 +14,7 @@ export default class Popup {
   displayPopup = () => {    
     const popup = this.generatePopup();
     popup.addEventListener("click", this.popupClickHandler);
-    document.body.prepend(popup);
+    document.documentElement.prepend(popup);
     Popup.toggleBodyLock();
   };
 
@@ -68,6 +68,6 @@ export default class Popup {
   }
 
   static toggleBodyLock(){
-    document.body.classList.toggle('lock');
+    document.documentElement.classList.toggle('lock');
   }
 }
