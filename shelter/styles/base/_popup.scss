@@ -1,0 +1,178 @@
+.popup {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup__button {
+  position: absolute;
+  top: -50px;
+  right: -43px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid $color-primary;
+  background-image: url("../assets/icons/modal-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  @extend %transition;
+
+  
+
+  @include media-pre-mobile{
+    right: -31px;
+  }
+
+  @include media-hover{
+    &:hover{
+      background-color: $color-primary;
+      cursor: pointer;
+    }
+    
+  }
+}
+
+.popup__body {
+  position: relative;
+  max-width: 900px;
+  width: 70%;
+  height: 500px;
+  border-radius: 9px;
+  background-color: $color-background-card;
+  display: flex;
+
+  @include media-laptop{
+    height: auto;
+  }
+  @include media-footer {
+    width: 82%;
+    height: auto;
+  }
+
+  @include media-pre-mobile{
+    flex-direction: column;
+    width: 75%;
+  }
+}
+
+.popup__image {
+  width: 100%;
+  height: 100%;
+  flex-basis: 70%;
+  background-size: contain;  
+  background-repeat: no-repeat;
+
+  @include media-laptop {
+    background-position: center;
+    height: auto;
+    margin: 10px;
+  }
+
+  @include media-tablet{
+    margin: 0;
+  }
+
+  @include media-slider-buttons{
+    margin: 10px;
+  }
+  
+  @include media-footer {
+    background-position: initial;
+    height: 350px;
+  }
+
+  @include media-mobile{
+    display: none;
+  }
+}
+
+.popup__info {
+  flex-basis: 49%;
+  font-family: $font-title;
+  @include media-footer {
+    flex-basis: 52%;
+  }
+}
+
+.popup__name {
+  @include font($size: 3.5rem, $height: 4.55rem);
+  margin: 53px 0 8px;
+  letter-spacing: 2px;
+  @include media-footer {
+    margin-top: 12px;
+  }
+
+  @include media-pre-mobile{
+    @include font($size: 3.5rem,$height: 4.55rem);
+    text-align: center;
+  }
+}
+
+.popup__breed {
+  @include font($size: 2rem, $height: 2.3rem);
+  letter-spacing: 1.3px;
+  @include media-pre-mobile{
+    text-align: center;
+  }
+}
+
+.popup__text,
+.popup__list {
+  @include font($size: 1.5rem, $height: 1.65rem);
+}
+
+.popup__list {
+  padding-left: 14px;
+  letter-spacing: 1px;
+  @include media-pre-mobile{
+    padding-left: 24px;
+  }
+}
+
+.popup__text {
+  margin: 43px 0 42px;
+  letter-spacing: 0.9px;
+  padding-right: 19px;
+  @include media-footer {
+    @include font($size: 1.3rem, $height: 1.43rem);
+    padding-right: 5px;
+    margin-top: 19px;
+    margin-bottom: 20px;
+    letter-spacing: 0.76px;
+  }
+
+  @include media-pre-mobile{
+    text-align: justify;
+    padding: 0 10px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+}
+
+.popup__item {
+  margin-bottom: 11px;
+
+  &::before {
+    content: "\2022";
+    color: $color-primary; 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -1em;
+    }
+
+  @include media-footer{
+    margin-bottom: 6px;
+  }
+}
+
+.text_bold {
+  font-weight: 700;
+}

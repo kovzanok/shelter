@@ -1,11 +1,12 @@
 
 
 .hamburger{
+    @extend %transition;
     display: none;
     position: relative;
     width: 30px;
     height: 22px;
-    margin-right: 37px;
+    
     @include media-burger{
         display: inline-block;
     }

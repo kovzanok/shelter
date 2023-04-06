@@ -2,15 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  min-height: 440px;
   @include media-slider-buttons {
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 560px;
   }
 }
 
 .slider__button {
-  width: 52px;
+  min-width: 52px;
   height: 52px;
   background-color: $color-background-card;
   margin-top: 4px;
@@ -33,21 +34,16 @@
 }
 
 .slider__items {
-  display: flex;
+  display: none;
   flex: 1;
   justify-content: space-around;
-  @include media-slider-buttons {
-    flex-basis: 100%;
-  }
-  .slider__item:first-child {
-    padding-left: 7px;
-    @include media-tablet {
-      padding-left: 0;
-    }
+
+  &_active {
+    display: flex;
   }
 
-  .slider__item:last-child {
-    padding-right: 8px;
+  @include media-slider-buttons {
+    flex-basis: 100%;
   }
 }
 
@@ -61,9 +57,9 @@
   background-color: $color-background-card;
   border-radius: 9px;
   cursor: pointer;
+
   @include media-hover {
     &:hover {
-      background-color: $color-light;
       .button {
         background-color: $color-primary-light;
         border: 2px solid $color-primary-light;
@@ -87,7 +83,6 @@
     @include media-pre-tablet {
       padding-left: 10px;
     }
-
     @include media-slider-items {
       display: none;
     }
@@ -95,7 +90,6 @@
 
   &:nth-child(3) {
     padding-right: 10px;
-
     @include media-slider {
       display: none;
     }
@@ -105,20 +99,72 @@
 .item__image {
   width: 270px;
   height: 270px;
+}
 
-  &_catrine {
-    background-image: url("../assets/img/pets-katrine.png");
+.item__name {
+  font-family: $font-title;
+  @include font($size: 2rem, $height: 2.272rem);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.slider__wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+}
+
+.slider__items {
+  display: none;
+  position: relative;
+  animation: 0.5s ease-in-out;
+  &_active,
+  &_next {
+    display: flex;
+  }
+  &_next {
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
-  &_jennifer {
-    background-image: url("../assets/img/pets-jennifer.png");
+  &_to-left {
+    animation-name: left;
   }
 
-  &_woody {
-    background-image: url("../assets/img/pets-woody.png");
+  &_to-right {
+    animation-name: right;
+    animation-direction: reverse;
+  }
+
+  &_from-left {
+    animation-name: left;
+    animation-direction: reverse;
+  }
+
+  &_from-right {
+    animation-name: right;
   }
 }
 
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
 .item__name {
   font-family: $font-title;
   @include font($size: 2rem, $height: 2.272rem);

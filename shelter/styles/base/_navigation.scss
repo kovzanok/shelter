@@ -1,6 +1,11 @@
 .nav {
   display: flex;
   justify-content: space-between;
+
+  @include media-burger {
+    flex-direction: column;
+    margin-top: 76%;
+  }
 }
 
 .nav__item {
@@ -19,7 +24,20 @@
       width: 100%;
       height: 3px;
       background-color: $color-primary;
+
+      @include media-burger {
+        width: 76%;
+        left: auto;
+        top: 51px;
+      }
     }
+  }
+
+  @include media-burger {
+    @include font($size: 3.2rem, $height: 5.12rem);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 41px;
   }
 }
 
@@ -28,44 +46,68 @@
   text-decoration: none;
   position: relative;
   color: $color-dark;
-  &:hover {
-    color: $color-background-card;
-  }
-
-  &::after {
-    transition: all 0.1s;
-    position: absolute;
-    content: "";
-    top: 23px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background-color: $color-primary;
-  }
-
-  &:active {
-    &::after {
-      width: 100%;
-    }
-  }
-}
-
-.header__our-pets {
-  .nav__item {
-    cursor: pointer;
-    color: $color-title;
-
-    &_active {
-      color: $color-darkest;
-      cursor: default;
-    }
-  }
-  .nav__link {
-    color: inherit;
-    cursor: inherit;
+  @include media-hover {
     &:hover {
-      color: $color-darkest;
-      text-shadow: 0px 0px 0px $color-darkest;
+      color: $color-background-card;
+    }
+
+    &::after {
+      transition: all 0.1s;
+      position: absolute;
+      content: "";
+      top: 23px;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background-color: $color-primary;
+    }
+
+    &:active {
+      &::after {
+        width: 100%;
+      }
+
+      @include media-burger {
+        &::after {
+          top: 50px;
+        }
+      }
     }
   }
 }
+  .header__our-pets {
+    .nav__item {
+      cursor: pointer;
+      color: $color-title;
+
+      &_active {
+        color: $color-darkest;
+        cursor: default;
+      }
+    }
+    .nav__link {
+      color: inherit;
+      cursor: inherit;
+      @include media-hover {
+        &:hover {
+          color: $color-darkest;
+          text-shadow: 0px 0px 0px $color-darkest;
+        }
+      }
+    }
+  }
+
+
+  .nav__background {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    @extend %transition;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+
