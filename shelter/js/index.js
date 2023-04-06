@@ -1,5 +1,3 @@
-console.log(``);
-
 import Burger from "./Burger.js";
 import Popup from "./Popup.js";
 
