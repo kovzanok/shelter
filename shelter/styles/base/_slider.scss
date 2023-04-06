@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  min-height: 440px;
   @include media-slider-buttons {
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 560px;
   }
 }
 
