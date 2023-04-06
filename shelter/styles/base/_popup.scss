@@ -68,7 +68,7 @@
   flex-basis: 70%;
   background-size: contain;  
   background-repeat: no-repeat;
-
+  border-radius: 9px;  
   @include media-laptop {
     background-position: center;
     height: auto;
