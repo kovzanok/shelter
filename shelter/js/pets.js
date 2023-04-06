@@ -3,8 +3,14 @@ import Burger from "./Burger.js";
 
 const tabletWidth = 768;
 const mobileWidth = 320;
-const displayedPets = countDisplayedPets();
+let displayedPets = countDisplayedPets();
 let pets, groupedArr;
+
+const desktopMedia = window.matchMedia("(min-width: 769px)");
+const tabletMedia = window.matchMedia(
+  "(min-width: 321px) and (max-width: 768px)"
+);
+const mobileMedia = window.matchMedia("(max-width: 320px)");
 
 function chunk(array, length) {
   const chunkedArr = [];
@@ -61,13 +67,13 @@ async function getPetsJson(url) {
   return json;
 }
 
-let a;
+let a = generatePaginationArr().flat(1);
 if (window.innerWidth <= 320) {
-  a = chunk(generatePaginationArr().flat(1), 3);
+  a = chunk(a, 3);
 } else if (window.innerWidth <= 768) {
-  a = chunk(generatePaginationArr().flat(1), 6);
+  a = chunk(a, 6);
 } else {
-  a = chunk(generatePaginationArr().flat(1), 8);
+  a = chunk(a, 8);
 }
 
 window.onload = async () => {
@@ -76,7 +82,6 @@ window.onload = async () => {
   header.addEventListener("click", burgerInstance.burgerClickHandler);
 
   const petsArr = a;
-
   pets = await getPetsJson("./js/pets.json");
   groupedArr = petsArr;
   generatePage(groupedArr, pets);
@@ -119,7 +124,20 @@ function getPageNum() {
 }
 
 function generatePage(groupedArr, pets) {
-  const pageNum = getPageNum() - 1;
+  let pageNum = getPageNum() - 1;
+  if (pageNum > 48 / displayedPets - 1) {
+    pageNum = 48 / displayedPets - 1;
+    changePageNum(pageNum + 1);
+    blockButton(document.querySelector(".pagination-button_click-next"));
+    blockButton(document.querySelector(".pagination-button_click-all-next"));
+  } else if (pageNum < 48 / displayedPets - 1) {
+    unblockButton(document.querySelector(".pagination-button_click-next"));
+    unblockButton(document.querySelector(".pagination-button_click-all-next"));
+  }
+  else {
+    blockButton(document.querySelector(".pagination-button_click-next"));
+    blockButton(document.querySelector(".pagination-button_click-all-next"));
+  }
   const arr = groupedArr[pageNum];
   const layout = document.querySelector(".layout-4-columns");
   layout.innerHTML = "";
@@ -201,4 +219,44 @@ function unblockButton(button) {
   button.classList.add("pagination-button_click");
   button.classList.remove("pagination-button_nonactive");
   button.disabled = false;
+}
+
+desktopMedia.addEventListener("change", handleDResolutionChange);
+tabletMedia.addEventListener("change", handleTResolutionChange);
+mobileMedia.addEventListener("change", handleMResolutionChange);
+
+function handleDResolutionChange(e) {
+  if (e.matches) {
+    displayedPets = 8;
+    a = a.flat(1);
+    a = chunk(a, 8);
+    getPetsJson("./js/pets.json").then((res) => {
+      groupedArr = a;
+      generatePage(groupedArr, res);
+    });
+  }
+}
+
+function handleTResolutionChange(e) {
+  if (e.matches) {
+    displayedPets = 6;
+    a = a.flat(1);
+    a = chunk(a, 6);
+    getPetsJson("./js/pets.json").then((res) => {
+      groupedArr = a;
+      generatePage(groupedArr, res);
+    });
+  }
+}
+
+function handleMResolutionChange(e) {
+  if (e.matches) {
+    displayedPets = 3;
+    a = a.flat(1);
+    a = chunk(a, 3);
+    getPetsJson("./js/pets.json").then((res) => {
+      groupedArr = a;
+      generatePage(groupedArr, res);
+    });
+  }
 }
