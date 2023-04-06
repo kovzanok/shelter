@@ -1,5 +1,3 @@
-console.log(``);
-
 import Popup from "./Popup.js";
 import Burger from "./Burger.js";
 
@@ -8,71 +6,53 @@ const mobileWidth = 320;
 const displayedPets = countDisplayedPets();
 let pets, groupedArr;
 
-function chunk(array,length) {
-  const chunkedArr=[];
-  let subArray=[];
-  array.forEach(item=>{
-    subArray.push(item)
-    if (subArray.length===length) {
+function chunk(array, length) {
+  const chunkedArr = [];
+  let subArray = [];
+  array.forEach((item) => {
+    subArray.push(item);
+    if (subArray.length === length) {
       chunkedArr.push(subArray);
-      subArray=[];
+      subArray = [];
     }
-  })
+  });
   return chunkedArr;
 }
 
-function zip(array) {
-  const rows = array.length;
-  const  cols = array[0].length;
-  const transposedArray = [];
-  for (let i = 0; i < cols; i++) {
-    transposedArray[i] = Array(rows);
-  }
-  for (let j = 0; j < rows; j++) {
-    for (let k = 0; k < cols; k++) {
-      transposedArray[k][j] = array[j][k];
-    }
-  }
-  return transposedArray;
-}
-
-function shuffle(array) {
-  array.sort(() => Math.random() - 0.5);
-}
+const countObj = {
+  0: 0,
+  1: 0,
+  2: 0,
+  3: 0,
+  4: 0,
+  5: 0,
+  6: 0,
+  7: 0,
+};
 
 function generatePaginationArr() {
-  const pages = 48 / displayedPets;
-
-  const a = [
-    [0, 1, 2, 3, 4, 5, 6, 7],
-    [1, 2, 3, 4, 5, 6, 7, 0],
-    [2, 3, 4, 5, 6, 7, 0, 1],
-    [3, 4, 5, 6, 7, 0, 1, 2],
-    [4, 5, 6, 7, 0, 1, 2, 3],
-    [5, 6, 7, 0, 1, 2, 3, 4],
-  ];
-
-  if (pages === 6) {
-    a.forEach((b) => {
-      shuffle(b);
-    });
-    return a;
-  } else if (pages === 8) {
-    let c = zip(a);
-    c.forEach((b) => {
-      shuffle(b);
-    });
-    return c;
-  } else {
-    let c = zip(a);
-
-    let d = c.map((b) => {
-      return chunk(b, 3);
-    });
-    shuffle(d)
-
-    return d.flat(1);
+  const res = [];
+  for (let i = 0; i < 8; i++) {
+    const newArr = generateRandomArr();
+    res.push(newArr);
   }
+  return res;
+}
+
+function generateRandomArr() {
+  const arr = [];
+  while (arr.length !== 6) {
+    const num = Math.floor(Math.random() * (7 + 1));
+    if (
+      !arr.includes(num) &&
+      countObj[num] !== 6 &&
+      Math.min(...Array.from(Object.values(countObj))) === countObj[num]
+    ) {
+      countObj[num] += 1;
+      arr.push(num);
+    }
+  }
+  return arr;
 }
 
 async function getPetsJson(url) {
@@ -81,13 +61,22 @@ async function getPetsJson(url) {
   return json;
 }
 
-window.onload = async () => {
-  const header=document.querySelector('.header');
-  const burgerInstance=new Burger(header);
-  header.addEventListener('click',burgerInstance.burgerClickHandler);
+let a;
+if (window.innerWidth <= 320) {
+  a = chunk(generatePaginationArr().flat(1), 3);
+} else if (window.innerWidth <= 768) {
+  a = chunk(generatePaginationArr().flat(1), 6);
+} else {
+  a = chunk(generatePaginationArr().flat(1), 8);
+}
 
-  const petsArr = generatePaginationArr();
-  console.log(petsArr);
+window.onload = async () => {
+  const header = document.querySelector(".header");
+  const burgerInstance = new Burger(header);
+  header.addEventListener("click", burgerInstance.burgerClickHandler);
+
+  const petsArr = a;
+
   pets = await getPetsJson("./js/pets.json");
   groupedArr = petsArr;
   generatePage(groupedArr, pets);
