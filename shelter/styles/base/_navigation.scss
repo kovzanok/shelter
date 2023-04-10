@@ -4,7 +4,6 @@
 
   @include media-burger {
     flex-direction: column;
-    margin-top: 76%;
   }
 }
 
@@ -26,7 +25,6 @@
       background-color: $color-primary;
 
       @include media-burger {
-        width: 76%;
         left: auto;
         top: 51px;
       }

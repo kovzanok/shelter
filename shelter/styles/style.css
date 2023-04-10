@@ -11,7 +11,6 @@
 @media (max-width: 767px) {
   .nav {
     flex-direction: column;
-    margin-top: 76%;
   }
 }
 
@@ -36,7 +35,6 @@
 }
 @media (max-width: 767px) {
   .nav__item_active::after {
-    width: 76%;
     left: auto;
     top: 51px;
   }
@@ -889,6 +887,7 @@ ul {
   flex-basis: 70%;
   background-size: contain;
   background-repeat: no-repeat;
+  border-radius: 9px;
 }
 @media (max-width: 1200px) {
   .popup__image {
@@ -1288,6 +1287,10 @@ ul {
 @media (max-width: 767px) {
   .header__nav {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     top: 0;
     z-index: 5;
     right: -100%;
