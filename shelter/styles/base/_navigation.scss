@@ -4,7 +4,6 @@
 
   @include media-burger {
     flex-direction: column;
-    margin-top: 49px;
   }
 }
 
@@ -36,7 +35,7 @@
     @include font($size: 3.2rem, $height: 5.12rem);
     display: flex;
     justify-content: center;
-    margin-bottom: 41px;
+    margin: 20.5px 0;
   }
 }
 
