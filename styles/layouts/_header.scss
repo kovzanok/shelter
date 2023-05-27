@@ -1,0 +1,102 @@
+.header__container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  @include media-tablet {
+    padding-top: 3.9%;
+  }
+
+  @include media-mobile {
+    padding-top: 9.3%;    
+  }
+}
+
+.header__logo {
+  @include media-mobile {
+    padding-left: 10px;
+  }  
+}
+
+.header__nav {
+  width: 37%;
+  padding: 6px 0 0 1px;
+  @extend %transition;
+
+  &_active ~ .header__burger {
+    .hamburger {
+      transform: rotate(90deg);
+    }
+  }
+
+  &_active + .nav__background {
+    opacity: 0.6;
+    visibility: visible;
+  }
+
+  @include media-laptop {
+    width: 62.7%;
+  }
+
+  @include media-burger {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    right: -100%;
+    height: 100%;
+    width: 320px;
+    background-color: $color-darkest;
+
+    &_active {
+      right: 0;
+    }
+  }
+}
+
+.header__our-pets {
+  .header__container {
+    padding-top: 31px;
+    padding-bottom: 31px;
+  }
+
+  .hamburger {
+    &::before {
+      @include hamburger-line($color: black);
+    }
+    &::after {
+      @include hamburger-line($color: black);
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .hamburger__line {
+    @include hamburger-line($color: black);
+  }
+
+  .header__nav{
+    @include media-burger {      
+      background-color: $color-background-section;
+  
+    }
+  }
+}
+
+.header__burger {
+  display: none;
+
+  @include media-burger {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+    padding-top: 25px;
+  }
+
+  @include media-mobile {
+    padding-top: 0;
+    justify-content: end;
+    width: 24.3%;
+  }
+}

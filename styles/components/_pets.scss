@@ -1,0 +1,51 @@
+.pets {
+  background-color: $color-background-section;
+}
+
+.pets__container {
+  padding-top: 78px;
+
+  @include media-pre-tablet {
+    padding-top: 10.5%;
+  }
+
+  @include media-pre-mobile{
+    padding-top: 13.5%;
+  }
+}
+
+.pets__title{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 59px;
+
+
+  > * {
+    font-family: $font-title;
+    @include font($size: 3.5rem, $height: 4.55rem);
+    color: $color-title;
+    letter-spacing: 2px;
+  }
+
+  @include media-pre-mobile {
+    padding-bottom: 40px;
+
+    > * {
+      @include font($size: 2.5rem, $height: 3.25rem);
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.pets__button {
+  padding-top: 63px;
+  padding-bottom: 102px;
+  text-align: center;
+
+  @include media-slider-buttons{
+    padding-top: 22px;
+    padding-bottom: 40px;
+  }
+}

@@ -1,0 +1,92 @@
+.not-only {
+}
+
+.not-only__container {
+  padding-top: 57px;
+  @include media-tablet {
+    padding-top: 27px;
+  }
+  @include media-pre-mobile{
+    padding-top: 29px;
+  }
+}
+
+.not-only__info {
+  padding-top: 13.8%;
+  @include media-pre-tablet {
+    padding-top: 0.5%;
+  }
+}
+
+.not-only__title {
+  @include font($size: 4.4rem, $height: 5.7rem);
+  font-family: $font-title;
+  color: $color-light;
+  padding-right: 19%;
+
+  @include media-pre-tablet {
+    width: 65%;
+    margin: 0 auto;
+    padding-right: 8%;
+  }
+
+  @include media-pre-mobile{
+    text-align: center;
+    @include font($size: 2.5rem,$height: 3.25rem);
+    padding: 0;
+    width: 70%;
+    letter-spacing: 1.5px;
+  }
+}
+
+.not-only__text {
+  margin: 42px 0px;
+  padding-right: 32px;
+  @include font($size: 1.5rem, $height: 2.4rem);
+  color: $color-dark;
+  @include media-pre-tablet {
+    width: 65%;
+    margin: 0 auto;
+    padding-right: 0%;
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+
+  @include media-pre-mobile{
+    text-align: center;
+    width: 100%;
+    padding-top: 13.2%;
+    padding-bottom: 14%;
+  }
+}
+
+.not-only__button {
+  @include media-pre-tablet {
+    text-align: center;
+  }
+}
+
+.not-only__image {
+  img {
+    width: 116%;
+
+    @include media-pre-tablet {
+      width: 80%;
+    }
+
+    @include media-pre-mobile{
+      width: 87%;
+    }
+  }
+
+  @include media-pre-tablet {
+    padding-top: 14%;
+    display: flex;
+    justify-content: end;
+    align-items: initial;
+  }
+
+  @include media-pre-mobile{
+    padding-top: 35%;
+  }
+}

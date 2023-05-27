@@ -1,0 +1,62 @@
+.our-friends{
+    background-color: $color-background-section;
+}
+
+.our-friends__container{
+    padding-top: 79px;
+    @include media-pre-mobile{
+        padding-top: 40px;
+    }
+}
+
+.our-friends__title{
+    padding-bottom: 58px;
+
+    @include media-tablet{
+        padding-bottom: 28px;
+    }
+
+    @include media-pre-mobile{
+        padding-bottom: 41px;
+    }
+    
+}
+
+.our-friends__title>*{
+    font-family: $font-title;
+    @include font($size: 3.5rem,$height: 4.55rem);
+    color: $color-title;
+    letter-spacing: 2px;
+    text-align: center;
+
+    @include media-pre-mobile{
+        @include font($size: 2.5rem, $height: 3.25rem);
+        letter-spacing: 1.5px;
+    }
+    
+}
+
+.our-friends__buttons{
+    padding-top: 30px;
+    padding-bottom: 100px;
+    text-align: center;
+    >*{
+        margin: 0 8.5px;
+
+        @include media-pre-mobile{
+            margin: 0;
+        }
+    }
+
+    @include media-tablet{
+        padding-top: 10px;
+        padding-bottom: 75px;
+    }
+
+    @include media-pre-mobile{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 12px;
+        padding-bottom: 44px;
+    }
+}
