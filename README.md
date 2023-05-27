@@ -7,3 +7,4 @@
  - Slider
  - Modal window
  - Pagination
+ - Semantics
