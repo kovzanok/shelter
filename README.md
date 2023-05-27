@@ -6,3 +6,4 @@
  - Responsive UI
  - Slider
  - Modal window
+ - Pagination
